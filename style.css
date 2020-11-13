@@ -1,0 +1,752 @@
+.def-space {
+  padding: 100px 20px;
+}
+
+.def-btn {
+  background-color: #ff671f;
+  color: #003c71;
+  padding: 15px 5px;
+  border-radius: 5px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+  line-height: 1;
+  display: inline-block;
+}
+.def-btn:hover {
+  text-decoration: none;
+  color: #003c71;
+}
+
+.def-btn-alt {
+  background-color: #ffffff;
+  color: #003c71;
+  border: solid 1px #003c71;
+}
+
+.col-center {
+  margin: 0 auto;
+}
+
+.btn-xl {
+  padding: 15px 30px;
+  font-size: 18px;
+}
+
+a.nav-link {
+  color: #003c71;
+}
+
+p {
+  font-family: "Arial";
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+p:last-child {
+  margin-bottom: 0;
+}
+
+.def-bg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.container, .container-lg, .container-md, .container-sm, .container-xl {
+  max-width: 1440px;
+}
+
+header .top-bar {
+  background-color: #7c878e40;
+  padding: 10px 0;
+}
+header .top-bar p {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+header .middle-bar .navbar-nav .nav-link {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 16px;
+  font-family: "Arial";
+  text-transform: uppercase;
+  font-weight: 900;
+}
+header .bottom-bar .persona-wrap {
+  position: relative;
+  background-color: #003c71;
+  border: 1px solid #fff;
+}
+header .bottom-bar .persona-wrap > .nav-link {
+  font-size: 20px;
+  color: #fff;
+  display: inline-block;
+  font-weight: 700;
+}
+header .bottom-bar .persona-wrap .dropdown-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  font-size: 20px;
+}
+header .bottom-bar .persona-wrap .dropdown-toggle:after {
+  display: none;
+}
+header .bottom-bar .persona-wrap .dropdown-menu {
+  width: 100%;
+}
+
+.banner-default {
+  height: calc(100vh - 190px);
+  position: relative;
+  background-attachment: fixed;
+}
+.banner-default h1 {
+  font-size: 72px;
+  color: #ff671f;
+  font-family: "Aachen";
+}
+.banner-default p {
+  color: #fff;
+}
+.banner-default .intro-img {
+  height: 500px;
+  width: 500px;
+}
+.banner-default.with-overlay:before {
+  content: "";
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+}
+.banner-default.v2 {
+  background-color: #7c878e;
+}
+.banner-default.v2 p {
+  color: #003c71;
+}
+.banner-default.smaller-banner {
+  height: calc(60vh);
+}
+
+.services h2 {
+  font-size: 52px;
+  color: #ff671f;
+  font-family: "Aachen";
+}
+.services .serv-box {
+  padding-bottom: 15px;
+}
+.services .serv-box .serv-img {
+  height: 275px;
+  width: 100%;
+  background-color: #7c878e;
+  display: block;
+}
+.services .serv-box .serv-capt h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ff671f;
+  font-family: "Aachen";
+}
+.services .serv-box .serv-capt p {
+  font-size: 18px;
+  color: #003c71;
+  margin-bottom: 10px;
+}
+.services .serv-box .serv-capt a {
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 700;
+  color: #003c71;
+}
+
+.info-art .info-box {
+  height: 400px;
+  position: relative;
+  padding: 10px;
+}
+.info-art .info-box .info-capt {
+  position: relative;
+}
+.info-art .info-box .info-capt h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ff671f;
+  font-family: "Aachen";
+}
+.info-art .info-box .info-capt p {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+.info-art .info-box:before {
+  content: "";
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+}
+
+.appli h2 {
+  font-size: 52px;
+  color: #003c71;
+  font-family: "Aachen";
+  margin-bottom: 40px;
+}
+.appli .appli-box {
+  height: 500px;
+  display: table;
+  width: 100%;
+}
+.appli .appli-box .appli-capt {
+  display: table-cell;
+  vertical-align: bottom;
+  padding: 20px;
+}
+.appli .appli-box h3 {
+  font-size: 42px;
+  color: #ff671f;
+  font-family: "Aachen";
+  margin-bottom: 0;
+}
+.appli .owl-nav {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  bottom: 50%;
+  margin: auto;
+}
+.appli .owl-nav .owl-prev {
+  position: absolute;
+  left: -30px;
+}
+.appli .owl-nav .owl-prev:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+.appli .owl-nav .owl-next {
+  position: absolute;
+  right: -30px;
+}
+.appli .owl-nav .owl-next:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.feature .feat-box {
+  min-height: 75vh;
+  height: 0;
+}
+.feature .feat-box .fake-img {
+  height: 100%;
+  width: 100%;
+}
+.feature .feat-box .feat-capt h2 {
+  font-size: 42px;
+  color: #003c71;
+  font-family: "Aachen";
+  margin-bottom: 20px;
+}
+.feature .feat-box .feat-capt p {
+  font-size: 18px;
+  color: #003c71;
+}
+
+.buying-opt .q-box {
+  padding: 30px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.buying-opt h2 {
+  font-size: 42px;
+  color: #003c71;
+  font-family: "Aachen";
+  margin-bottom: 20px;
+}
+.buying-opt h3 {
+  color: #003c71;
+  font-family: "Arial";
+  font-weight: 900;
+  font-size: 24px;
+}
+.buying-opt h4 {
+  color: #003c71;
+  font-family: "Arial";
+  font-size: 14px;
+}
+.buying-opt .box-cont {
+  margin-top: 20px;
+}
+.buying-opt .box-cont label {
+  color: #003c71;
+  display: block;
+  font-family: "Arial";
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.case-studies h2 {
+  font-size: 42px;
+  color: #003c71;
+  font-family: "Aachen";
+  margin-bottom: 40px;
+}
+.case-studies .case-box {
+  position: relative;
+  height: 450px;
+  display: table;
+  border: 1px solid #003c71;
+}
+.case-studies .case-box .case-capt {
+  display: table-cell;
+  vertical-align: bottom;
+}
+.case-studies .case-box .case-capt .case-wrap {
+  padding: 10px;
+  background-color: #ffffff;
+  position: relative;
+}
+.case-studies .case-box .case-capt h3 {
+  font-size: 24px;
+  font-weight: 900;
+  color: #ff671f;
+}
+.case-studies .case-box .case-capt p {
+  font-size: 18px;
+  color: #003c71;
+}
+.case-studies .case-box:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 100%;
+  width: 100%;
+}
+
+.irreg h1 {
+  font-size: 72px;
+  color: #ff671f;
+  font-family: "Aachen";
+}
+.irreg p {
+  font-size: 18px;
+  color: #003c71;
+}
+.irreg.v2 h1 {
+  font-size: 54px;
+}
+.irreg .sign-up label {
+  display: block;
+  font-size: 12px;
+}
+.irreg .sign-up input:not([type=submit]) {
+  width: 100%;
+}
+.irreg .su .fake-img {
+  height: 350px;
+  background-color: #7c878e;
+}
+
+.manu .manu-box {
+  margin-bottom: 30px;
+  border: 2px solid #7c878e;
+}
+.manu .manu-box .manu-head {
+  background-color: #7c878e;
+  color: #003c71;
+  padding: 10px;
+  text-align: center;
+}
+.manu .manu-box .manu-head h2 {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 0;
+}
+.manu .manu-box .manu-cont {
+  padding: 10px;
+}
+.manu .manu-box .manu-cont .manu-head {
+  margin-bottom: 20px;
+}
+.manu .manu-box .manu-cont h3 {
+  text-align: center;
+  font-size: 24px;
+  margin: 0;
+  margin-bottom: 30px;
+  color: #003c71;
+}
+.manu .manu-box .manu-cont ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.manu .manu-box .manu-cont ul li {
+  padding-bottom: 15px;
+}
+.manu .manu-box .manu-cont ul li .manu-img {
+  vertical-align: middle;
+  display: inline-block;
+  color: #003c71;
+  font-size: 70px;
+}
+.manu .manu-box .manu-cont ul li p {
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 30px;
+  font-size: 18px;
+  color: #003c71;
+}
+.manu .manu-box .manu-cont ul li p b {
+  color: #ff671f;
+}
+.manu .manu-box .manu-cont ul li:last-child {
+  padding-bottom: 0;
+}
+.manu .manu-box:last-child {
+  margin-bottom: 0;
+}
+
+.wara form label {
+  display: block;
+  font-size: 12px;
+}
+.wara form label .red {
+  color: red;
+}
+.wara form label input {
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.wara form input {
+  width: 100%;
+}
+.wara form input[type=submit] {
+  width: auto;
+  margin: 0 auto;
+}
+.wara .nav-pills .nav-link {
+  background-color: #ff671f;
+  margin: 0 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+.wara .tab-content p {
+  font-size: 18px;
+  color: #003c71;
+}
+.wara .tab-content .warning {
+  color: red;
+  display: block;
+  padding-bottom: 20px;
+}
+.wara .tab-content .caution {
+  color: #003c71;
+  display: block;
+  padding-bottom: 20px;
+}
+.wara .tab-content .fake-img {
+  width: 400px;
+  height: 400px;
+  background-color: #7c878e;
+  margin: 0 auto;
+}
+
+.poli .poli-box {
+  height: 300px;
+  background-color: #7c878e;
+  transition: 300ms all ease;
+  margin-bottom: 30px;
+}
+.poli .poli-box .poli-cont {
+  text-align: center;
+}
+.poli .poli-box .poli-cont h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #003c71;
+  transition: 300ms all ease;
+  margin-bottom: 0;
+}
+.poli .poli-box .poli-cont p {
+  font-size: 18px;
+  color: #003c71;
+  transition: 300ms all ease;
+  margin-bottom: 0;
+}
+.poli .poli-box:hover {
+  background-color: #ff671f;
+}
+.poli .poli-box:hover .poli-cont h2,
+.poli .poli-box:hover .poli-cont p {
+  color: #ffffff;
+}
+
+.sele form {
+  width: 100%;
+  margin-bottom: 50px;
+}
+.sele select {
+  height: 48px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 20px;
+}
+.sele input[type=submit] {
+  width: auto;
+  display: inline-block;
+  border: 0;
+  vertical-align: middle;
+}
+.sele h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #ff671f;
+}
+.sele .sele-box {
+  padding: 10px;
+  -webkit-box-shadow: 0px 0px 5px 0px #ff671f;
+  -moz-box-shadow: 0px 0px 5px 0px #ff671f;
+  box-shadow: 0px 0px 5px 0px #ff671f;
+  margin-bottom: 30px;
+}
+.sele .sele-box .sele-img {
+  height: 350px;
+  background-color: #7c878e;
+}
+.sele .sele-box h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #003c71;
+}
+.sele .sele-box p {
+  color: #003c71;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.sele .sele-box p:last-child {
+  margin: 0;
+}
+.sele .sele-box.ns {
+  box-shadow: none;
+  border: solid 1px #003c71;
+}
+.sele .sele-box:last-child {
+  margin-bottom: 0;
+}
+.sele .comp-tbl h4 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #003c71;
+}
+.sele .comp-tbl .magic-box .fake-img {
+  height: 175px;
+  background-color: #7c878e;
+  margin-bottom: 10px;
+}
+.sele .comp-tbl .magic-box.v2 h4 {
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #003c71;
+}
+.sele .comp-tbl p {
+  font-size: 12px;
+  color: #003c71;
+}
+.sele .comp-tbl .attr-box .attr-val {
+  font-size: 18px;
+  color: #003c71;
+  text-transform: uppercase;
+  padding: 10px 10px 10px 0;
+}
+.sele .comp-tbl .owl-carousel .owl-nav {
+  text-align: right;
+}
+.sele .comp-tbl .owl-carousel .owl-prev,
+.sele .comp-tbl .owl-carousel .owl-next {
+  background: none;
+  border: 0;
+  color: #003c71;
+  outline: none;
+  font-size: 20px;
+}
+.sele .comp-tbl .owl-carousel .owl-prev:hover,
+.sele .comp-tbl .owl-carousel .owl-next:hover {
+  background: none;
+  color: #003c71;
+  border: 0;
+}
+.prod-info .thumb-nav {
+  width: 100px;
+}
+.prod-info .thumb-nav .fake-img {
+  width: 100%;
+  height: 100px;
+  background-color: #7c878e;
+  margin-bottom: 10px;
+}
+.prod-info .thumb-nav .fake-img:last-child {
+  margin-bottom: 0;
+}
+.prod-info .big-fake {
+  width: calc(100% - 110px);
+  background-color: #7c878e;
+  height: 450px;
+}
+.prod-info h1 {
+  font-weight: 700;
+  font-family: "Arial";
+  color: #ff671f;
+  font-size: 48px;
+}
+.prod-info p {
+  font-family: "Arial";
+  font-size: 18px;
+  color: #003c71;
+  margin-bottom: 10px;
+}
+.prod-info p:last-child {
+  margin-bottom: 0;
+}
+
+.prod-details ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.prod-details ul .manu-img {
+  vertical-align: middle;
+  display: inline-block;
+  color: #003c71;
+  font-size: 70px;
+}
+.prod-details ul li p {
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 30px;
+  font-size: 18px;
+  color: #003c71;
+}
+.prod-details ul li p b {
+  color: #ff671f;
+}
+.prod-details h2 {
+  font-size: 36px;
+  color: #ff671f;
+  font-weight: 700;
+}
+.prod-details .rp .fake-img {
+  height: 250px;
+  background-color: #7c878e;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.prod-details .rp h3 {
+  font-size: 24px;
+  color: #003c71;
+  font-weight: 700;
+}
+.prod-details table {
+  width: 100%;
+  margin-top: 50px;
+}
+.prod-details table tbody tr td {
+  font-size: 24px;
+  color: #003c71;
+}
+
+.topics h2 {
+  font-size: 42px;
+  color: #003c71;
+  font-family: "Aachen";
+  margin-bottom: 20px;
+}
+.topics .nav-tabs {
+  border: 0;
+}
+.topics .nav-tabs .nav-item {
+  margin-bottom: 0;
+}
+.topics .nav-tabs .nav-item a {
+  border: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #003c71;
+}
+.topics .nav-tabs .nav-item a.active {
+  color: #ff671f;
+}
+.topics .fake-img {
+  height: 250px;
+  background-color: #7c878e;
+}
+.topics h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #003c71;
+}
+
+.simple {
+  background-color: #7c878e;
+}
+.simple h2 {
+  font-size: 42px;
+  color: #003c71;
+  font-family: "Aachen";
+  margin-bottom: 20px;
+}
+.simple p {
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 30px;
+  font-size: 24px;
+  color: #003c71;
+}
+
+footer * {
+  color: #003c71;
+}
+footer .widget h4 {
+  font-weight: 900;
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+footer .widget ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+footer .widget ul li a {
+  font-size: 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+footer .foot-text {
+  padding-top: 40px;
+}
+footer .foot-text p {
+  font-size: 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+footer .foot-text p a {
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=style.css.map */
