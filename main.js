@@ -7,7 +7,7 @@ jQuery(document).ready(function($) {
 	    items: 2,
 	    margin: 30,
 	    autoplay:true,
-	})
+	});
 
 	$('.magic-box').matchHeight();
 	$('.attr-1').matchHeight();
@@ -19,4 +19,6 @@ jQuery(document).ready(function($) {
 	$('.attr-7').matchHeight();
 	$('.attr-8').matchHeight();
 	$('.attr-9').matchHeight();
+
+  $('#mainHeader').scrollToFixed();
 });

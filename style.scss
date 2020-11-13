@@ -70,6 +70,7 @@ p {
 }
 
 header {
+	background-color: $color5;
 	.top-bar {
 		background-color: #7c878e40;
 		padding: 10px 0;
@@ -313,6 +314,16 @@ header {
 				font-size: 18px;
 				color: $color2;
 			}
+		}
+	}
+
+	&.v2 {
+		h2 {
+			text-transform: uppercase;
+			font-size: 42px;
+			font-weight: 900;
+			color: $color2;
+			margin-bottom: 50px;
 		}
 	}
 }
@@ -772,6 +783,13 @@ header {
 			margin-bottom: 0;
 		}
 	}
+
+	&.v2 {
+		h1 {
+			font-weight: 700;
+			font-size: 36px;
+		}
+	}
 }
 
 .prod-details {
@@ -924,6 +942,99 @@ footer {
 			text-transform: uppercase;
 			a {
 				text-decoration: none;
+			}
+		}
+	}
+}
+
+.navbox {
+	position: relative;
+	.db-link {
+		text-decoration: none;
+		background-color: $color2;
+		padding: 10px 20px;
+		font-weight: 700;
+		color: $color5;
+		font-size: 18px;
+		border: 1px solid $color5;
+		border-bottom: 0;
+		border-top: 0;
+		position: relative;
+		-ms-flex: 0 0 33.333333%;
+		flex: 0 0 33.333333%;
+		max-width: 33.333333%;
+		a {
+			text-decoration: none;
+			color: $color5;
+		}
+
+		&:first-child {
+			border-left: 0;
+		}
+
+		&:last-child {
+			border-right: 0;
+		}
+
+		&:after {
+			content: '\f078';
+			color: #ffffff;
+			font-family: "Font Awesome 5 Free";
+			font-weight: 900;
+			right: 20px;
+			position: absolute;
+		}
+
+		&:hover {
+			.navdropbox {
+				display: block;
+				opacity: 1;
+			}
+		}
+	}
+
+	.navdropbox {
+		left: 0;
+		background-color: #003c71;
+		z-index: 9;
+		width: 100%;
+		border-top: 1px solid #ffffff;
+		padding-top: 50px;
+		padding-bottom: 50px;
+		position: fixed;
+		top: 188px;
+		opacity: 0;
+		display: none;
+		transition: 300ms all ease;
+		.fake-img {
+			width: 100%;
+			height: 200px;
+			background-color: $color4
+		}
+
+		.fake-label {
+			color: $color5;
+			font-size: 18px;
+			font-weight: 700;
+			margin-top: 10px;
+			a {
+				text-decoration: none;
+				color: $color1;
+			}
+		}
+
+		ul {
+			padding: 0;
+			list-style-type: none;
+			margin: 0;
+			margin-top: 20px;
+			li {
+				a {
+					font-size: 18px;
+					color: $color5;
+					text-decoration: none;
+					font-weight: 400;
+				}
 			}
 		}
 	}

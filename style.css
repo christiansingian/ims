@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .def-space {
   padding: 100px 20px;
 }
@@ -56,6 +57,9 @@ p:last-child {
   max-width: 1440px;
 }
 
+header {
+  background-color: #ffffff;
+}
 header .top-bar {
   background-color: #7c878e40;
   padding: 10px 0;
@@ -258,6 +262,13 @@ header .bottom-bar .persona-wrap .dropdown-menu {
 .feature .feat-box .feat-capt p {
   font-size: 18px;
   color: #003c71;
+}
+.feature.v2 h2 {
+  text-transform: uppercase;
+  font-size: 42px;
+  font-weight: 900;
+  color: #003c71;
+  margin-bottom: 50px;
 }
 
 .buying-opt .q-box {
@@ -623,6 +634,10 @@ header .bottom-bar .persona-wrap .dropdown-menu {
 .prod-info p:last-child {
   margin-bottom: 0;
 }
+.prod-info.v2 h1 {
+  font-weight: 700;
+  font-size: 36px;
+}
 
 .prod-details ul {
   list-style-type: none;
@@ -747,6 +762,88 @@ footer .foot-text p {
 }
 footer .foot-text p a {
   text-decoration: none;
+}
+
+.navbox {
+  position: relative;
+}
+.navbox .db-link {
+  text-decoration: none;
+  background-color: #003c71;
+  padding: 10px 20px;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 18px;
+  border: 1px solid #ffffff;
+  border-bottom: 0;
+  border-top: 0;
+  position: relative;
+  -ms-flex: 0 0 33.333333%;
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+}
+.navbox .db-link a {
+  text-decoration: none;
+  color: #ffffff;
+}
+.navbox .db-link:first-child {
+  border-left: 0;
+}
+.navbox .db-link:last-child {
+  border-right: 0;
+}
+.navbox .db-link:after {
+  content: "";
+  color: #ffffff;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  right: 20px;
+  position: absolute;
+}
+.navbox .db-link:hover .navdropbox {
+  display: block;
+  opacity: 1;
+}
+.navbox .navdropbox {
+  left: 0;
+  background-color: #003c71;
+  z-index: 9;
+  width: 100%;
+  border-top: 1px solid #ffffff;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  position: fixed;
+  top: 188px;
+  opacity: 0;
+  display: none;
+  transition: 300ms all ease;
+}
+.navbox .navdropbox .fake-img {
+  width: 100%;
+  height: 200px;
+  background-color: #7c878e;
+}
+.navbox .navdropbox .fake-label {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+.navbox .navdropbox .fake-label a {
+  text-decoration: none;
+  color: #ff671f;
+}
+.navbox .navdropbox ul {
+  padding: 0;
+  list-style-type: none;
+  margin: 0;
+  margin-top: 20px;
+}
+.navbox .navdropbox ul li a {
+  font-size: 18px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 400;
 }
 
 /*# sourceMappingURL=style.css.map */
