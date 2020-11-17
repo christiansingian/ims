@@ -9,6 +9,13 @@ jQuery(document).ready(function($) {
 	    autoplay:true,
 	});
 
+	$('.owl-carousel2').owlCarousel({
+		loop:false,
+		margin:10,
+		nav:true,
+		mouseDrag:false,
+	});
+
 	$('.magic-box').matchHeight();
 	$('.attr-1').matchHeight();
 	$('.attr-2').matchHeight();

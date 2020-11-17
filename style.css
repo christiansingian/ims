@@ -25,6 +25,16 @@
   border: solid 1px #003c71;
 }
 
+.bo {
+  -ms-transform: skewX(-20deg);
+  -webkit-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+  color: #ffffff !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  border-radius: 0;
+}
+
 .col-center {
   margin: 0 auto;
 }
@@ -75,6 +85,52 @@ header .middle-bar .navbar-nav .nav-link {
   font-family: "Arial";
   text-transform: uppercase;
   font-weight: 900;
+}
+header .middle-bar .navbar-nav .nav-link.dropdown-toggle:after {
+  border: 0;
+  content: "";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #003c71;
+  vertical-align: baseline;
+  transition: 300ms all ease;
+}
+header .middle-bar .navbar-nav .nav-link.dropdown-toggle[aria-expanded=true]:after {
+  transform: rotate(180deg);
+}
+header .middle-bar .navbar-nav .nav-item {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+header .middle-bar .navbar-nav .nav-item > a {
+  padding-left: 0;
+  padding-right: 0;
+  transition: 300ms all ease;
+}
+header .middle-bar .navbar-nav .nav-item > a:hover {
+  color: #ff671f;
+}
+header .middle-bar .navbar-nav .nav-item.dropdown.show .dropdown-menu {
+  max-height: 300px;
+  opacity: 1;
+}
+header .middle-bar .navbar-nav .nav-item.dropdown .dropdown-menu {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  max-height: 0;
+  display: block;
+  overflow: hidden;
+  opacity: 0;
+}
+header .middle-bar .navbar-nav .dropdown-item {
+  color: #003c71;
+  transition: 300ms all ease;
+}
+header .middle-bar .navbar-nav .dropdown-item:hover {
+  color: #ff671f;
 }
 header .bottom-bar .persona-wrap {
   position: relative;
@@ -149,7 +205,6 @@ header .bottom-bar .persona-wrap .dropdown-menu {
 .services .serv-box .serv-img {
   height: 275px;
   width: 100%;
-  background-color: #7c878e;
   display: block;
 }
 .services .serv-box .serv-capt h3 {
@@ -738,9 +793,11 @@ footer * {
 }
 footer .widget h4 {
   font-weight: 900;
-  font-size: 16px;
+  font-size: 18px;
   text-transform: uppercase;
   margin-bottom: 20px;
+  font-family: "Arial";
+  color: #ff671f;
 }
 footer .widget ul {
   list-style-type: none;
@@ -748,17 +805,16 @@ footer .widget ul {
   margin: 0;
 }
 footer .widget ul li a {
-  font-size: 1rem;
+  font-size: 18px;
   text-decoration: none;
-  text-transform: uppercase;
+  font-family: "Arial";
 }
 footer .foot-text {
   padding-top: 40px;
 }
 footer .foot-text p {
-  font-size: 0.875rem;
+  font-size: 18px;
   text-decoration: none;
-  text-transform: uppercase;
 }
 footer .foot-text p a {
   text-decoration: none;
@@ -776,6 +832,7 @@ footer .foot-text p a {
   font-size: 18px;
   border: 1px solid #ffffff;
   border-bottom: 0;
+  transition: 200ms all ease;
   border-top: 0;
   position: relative;
   -ms-flex: 0 0 33.333333%;
@@ -785,6 +842,7 @@ footer .foot-text p a {
 .navbox .db-link a {
   text-decoration: none;
   color: #ffffff;
+  text-transform: uppercase;
 }
 .navbox .db-link:first-child {
   border-left: 0;
@@ -794,40 +852,46 @@ footer .foot-text p a {
 }
 .navbox .db-link:after {
   content: "";
-  color: #ffffff;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
+  color: #ffffff;
   right: 20px;
+  transition: 300ms all ease;
   position: absolute;
 }
+.navbox .db-link:hover:after {
+  transform: rotate(180deg);
+}
 .navbox .db-link:hover .navdropbox {
-  display: block;
   opacity: 1;
+  max-height: 100%;
 }
 .navbox .navdropbox {
   left: 0;
   background-color: #003c71;
-  z-index: 9;
   width: 100%;
-  border-top: 1px solid #ffffff;
-  padding-top: 50px;
-  padding-bottom: 50px;
   position: fixed;
-  top: 188px;
+  top: 189px;
   opacity: 0;
-  display: none;
-  transition: 300ms all ease;
+  max-height: 0;
+  padding: 0;
+  overflow: hidden;
+  transition: 300ms all ease-in-out 500ms;
 }
 .navbox .navdropbox .fake-img {
   width: 100%;
   height: 200px;
-  background-color: #7c878e;
+}
+.navbox .navdropbox .col-center {
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 .navbox .navdropbox .fake-label {
   color: #ffffff;
   font-size: 18px;
   font-weight: 700;
   margin-top: 10px;
+  text-transform: uppercase;
 }
 .navbox .navdropbox .fake-label a {
   text-decoration: none;
@@ -843,7 +907,20 @@ footer .foot-text p a {
   font-size: 18px;
   color: #ffffff;
   text-decoration: none;
+  transition: 300ms all ease;
   font-weight: 400;
+}
+.navbox .navdropbox ul li a:hover {
+  color: #ff671f;
+}
+.navbox .navdropbox:before {
+  content: "";
+  top: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  left: 0;
+  position: absolute;
 }
 
 /*# sourceMappingURL=style.css.map */
