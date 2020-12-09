@@ -9,15 +9,15 @@
     <title>Sample</title>
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
     <link href="aachen/aachen.css" rel="stylesheet">
     <link href="vendor/dist/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="vendor/dist/assets/owl.theme.default.css" rel="stylesheet">
     <link href="fontawesome/css/all.css" rel="stylesheet">
+    <link href="vendor/jquery-stack-menu.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
   </head>
 
   <body>
-
   <!-- Navigation -->
   <header id="mainHeader">
     <div class="top-bar">
@@ -29,18 +29,29 @@
       <div class="col">
         <nav class="navbar navbar-expand-lg px-0">
           <a class="navbar-brand" href="index.html">
-            <img src="images/IMS.png" widt="175" height="75" alt="">
+            <img src="images/IMS.png" widt="175" class="d-md-block d-none" height="75" alt="IMS Logo">
+            <img src="images/IMS.png" widt="100" class="tabLogo" height="50" alt="IMS Logo">
+            <img src="images/IMS.png" widt="100" class="phoneLogo" height="30" alt="IMS Logo">
           </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+          <div class="item-wrap d-xl-none d-lg-none d-flex text-uppercase">
+            <div class="d-xl-none d-lg-none bo-wrap mr-3 mr-md-4 mbo">
+              <a class="def-btn bo" href="buying-options.html">BUYING OPTIONS</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon">
+                <span class="nb-bar top"></span>
+                <span class="nb-bar mid"></span>
+                <span class="nb-bar btm"></span>
+              </span>
+            </button>
+          </div>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="ml-auto navbar-nav d-flex flex-wrap align-items-center">
+            <ul class="ml-auto navbar-nav d-lg-flex d-xl-flex d-block flex-wrap align-items-center">
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="snowBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Company
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <div class="dropdown-menu" aria-labelledby="snowBtn">
                   <a class="dropdown-item" href="about-ims.html">About IMS</a>
                   <a class="dropdown-item" href="#">Become a Dealer</a>
                   <a class="dropdown-item" href="#">Join Our Team</a>
@@ -48,10 +59,10 @@
                 </div>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="govBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Resources
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <div class="dropdown-menu" aria-labelledby="govBtn">
                   <a class="dropdown-item" href="#"><b>Media</b></a>
                   <a class="dropdown-item" href="#">Videos</a>
                   <a class="dropdown-item" href="#">Printed Catalog</a>
@@ -71,8 +82,8 @@
               <li class="nav-item">
                 <a class="nav-link" href="product-selector.html">Product Selector</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link def-btn" href="buying-options.html">Buying Options</a>
+              <li class="nav-item bo-wrap">
+                <a class="nav-link def-btn bo" href="buying-options.html">Buying Options</a>
               </li>
             </ul>
           </div>
@@ -80,170 +91,231 @@
       </div>
     </div>
     <div class="bottom-bar">
-      <div class="navbox d-flex flex-wrap align-items-center">
-        <div class="dropbox-parent db-link">
-          <a href="snow-removal-pros.html">
-            Snow Removal Pro
+     <ul class="ml-auto navbar-nav d-lg-flex d-none flex-wrap flex-row align-items-center btmNav">
+        <li class="nav-item col-4 dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="snowBtn1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Snow Removal Pros
           </a>
-          <div class="navdropbox">
-              <div class="container-fluid">
-                  <div class="col-11 col-center">
-                      <div class="row">
-                          <div class="cat-nav offset-1 col-2">
-                              <div class="fake-img"></div>
-                              <div class="fake-label">Brine Master</div>
-                              <ul>
-                                  <li><a href="#">Brine Master®</a></li>
-                              </ul>
-                          </div>
-                          <div class="cat-nav col-2">
-                              <div class="fake-img"></div>
-                              <div class="fake-label">Storage + Transport Equipment</div>
-                              <ul>
-                                  <li><a href="#">Brine Storage Tanks</a></li>
-                              </ul>
-                          </div>
-                          <div class="cat-nav col-2">
-                              <div class="fake-img"></div>
-                              <div class="fake-label">Liquid Sprayers</div>
-                              <ul>
-                                  <li><a href="#">Liquid Master® U-Series</a></li>
-                                  <li><a href="#">Liquid Master® T-Series</a></li>
-                                  <li><a href="#">Liquid Master® E-Series</a></li>
-                                  <li><a href="product.html">Liquid Master® EM-Series</a></li>
-                                  <li><a href="#">Liquid Master® W-Series</a></li>
-                                  <li><a href="#">Ice Control Boom</a></li>
-                                  <li><a href="#">Ice Control Boom Mount</a></li>
-                                  <li><a href="#">Storage Stand</a></li>
-                                  <li><a href="#">Self Loading Legs</a></li>
-                                  <li><a href="#">Baffle Balls</a></li>
-                              </ul>
-                          </div>
-                          <div class="cat-nav col-2">
-                              <div class="fake-img"></div>
-                              <div class="fake-label">Diesel Refueling Units</div>
-                              <ul>
-                                  <li><a href="#">Diesel Fuel Boss®</a></li>
-                              </ul>
-                          </div>
-                          <div class="cat-nav col-2">
-                              <div class="fake-img"></div>
-                              <div class="fake-label"><a href="#">Shop Parts</a></div>
-                          </div>
+          <div class="dropdown-menu" aria-labelledby="snowBtn1" style="">
+            <div class="container-fluid">
+                <div class="col-11 custom-col col-center">
+                    <div class="row">
+                      <div class="offset-1 col-2 col-11 cat-nav-label">
+                        <a class="pers-btn" href="snow-removal-pros.html">Snow Removal Pros </a>
                       </div>
-                  </div>
-              </div>
+                      <div class="cat-nav offset-1 col-2">
+                          <div class="fake-img def-bg" style="background-image: url('images/brine.png')"></div>
+                          <div class="fake-label">Brine Makers</div>
+                          <ul>
+                              <li><a href="#">Brine Master®</a></li>
+                          </ul>
+                      </div>
+                      <div class="cat-nav col-2">
+                          <div class="fake-img def-bg" style="background-image: url('images/storage.png')"></div>
+                          <div class="fake-label">Storage + Transport Equipment</div>
+                          <ul>
+                              <li><a href="#">Brine Storage Tanks</a></li>
+                          </ul>
+                      </div>
+                      <div class="cat-nav col-2">
+                          <div class="fake-img def-bg" style="background-image: url('images/sprayer.png')"></div>
+                          <div class="fake-label">Liquid Sprayers</div>
+                          <ul>
+                              <li><a href="#">Liquid Master® U-Series</a></li>
+                              <li><a href="#">Liquid Master® T-Series</a></li>
+                              <li><a href="#">Liquid Master® E-Series</a></li>
+                              <li><a href="product.html">Liquid Master® EM-Series</a></li>
+                              <li><a href="#">Liquid Master® W-Series</a></li>
+                              <li><a href="#">Ice Control Boom</a></li>
+                              <li><a href="#">Ice Control Boom Mount</a></li>
+                              <li><a href="#">Storage Stand</a></li>
+                              <li><a href="#">Self Loading Legs</a></li>
+                              <li><a href="#">Baffle Balls</a></li>
+                          </ul>
+                      </div>
+                      <div class="cat-nav col-2">
+                          <div class="fake-img def-bg" style="background-image: url('images/diesel.png')"></div>
+                          <div class="fake-label">Diesel Refueling Units</div>
+                          <ul>
+                              <li><a href="#">Diesel Fuel Boss®</a></li>
+                          </ul>
+                      </div>
+                      <div class="cat-nav col-2">
+                          <div class="fake-img def-bg" style="background-image: url('images/parts.png')"></div>
+                          <div class="fake-label"><a href="#">Shop Parts</a></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
           </div>
-        </div>
-        <div class="dropbox-parent db-link">
-          <a href="government.html">
+        </li>
+        <li class="nav-item col-4 dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="govBtn1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Government
           </a>
-          <div class="navdropbox">
-              <div class="container-fluid">
-                  <div class="col-11 col-center">
-                      <div class="row">
-                          <div class="cat-nav offset-1 col-2">
-                              <div class="fake-img"></div>
-                              <div class="fake-label">Brine Master</div>
-                              <ul>
-                                  <li><a href="#">Brine Master®</a></li>
-                              </ul>
-                          </div>
-                          <div class="cat-nav col-2">
-                              <div class="fake-img"></div>
-                              <div class="fake-label">Storage + Transport Equipment</div>
-                              <ul>
-                                  <li><a href="#">Brine Storage Tanks</a></li>
-                              </ul>
-                          </div>
-                          <div class="cat-nav col-2">
-                              <div class="fake-img"></div>
-                              <div class="fake-label">Liquid Sprayers</div>
-                              <ul>
-                                  <li><a href="#">Liquid Master® U-Series</a></li>
-                                  <li><a href="#">Liquid Master® T-Series</a></li>
-                                  <li><a href="#">Liquid Master® E-Series</a></li>
-                                  <li><a href="product.html">Liquid Master® EM-Series</a></li>
-                                  <li><a href="#">Liquid Master® W-Series</a></li>
-                                  <li><a href="#">Ice Control Boom</a></li>
-                                  <li><a href="#">Ice Control Boom Mount</a></li>
-                                  <li><a href="#">Storage Stand</a></li>
-                                  <li><a href="#">Self Loading Legs</a></li>
-                                  <li><a href="#">Baffle Balls</a></li>
-                              </ul>
-                          </div>
-                          <div class="cat-nav col-2">
-                              <div class="fake-img"></div>
-                              <div class="fake-label">Diesel Refueling Units</div>
-                              <ul>
-                                  <li><a href="#">Diesel Fuel Boss®</a></li>
-                              </ul>
-                          </div>
-                          <div class="cat-nav col-2">
-                              <div class="fake-img"></div>
-                              <div class="fake-label"><a href="#">Shop Parts</a></div>
-                          </div>
+          <div class="dropdown-menu" aria-labelledby="govBtn1">
+            <div class="container-fluid">
+                <div class="col-11 custom-col col-center">
+                    <div class="row">
+                      <div class="offset-1 col-2 col-11 cat-nav-label">
+                        <a class="pers-btn" href="government.html">Government </a>
                       </div>
-                  </div>
-              </div>
+                        <div class="cat-nav offset-1 col-2">
+                            <div class="fake-img def-bg" style="background-image: url('images/brine.png')"></div>
+                            <div class="fake-label">Brine Makers</div>
+                            <ul>
+                                <li><a href="#">Brine Master®</a></li>
+                            </ul>
+                        </div>
+                        <div class="cat-nav col-2">
+                            <div class="fake-img def-bg" style="background-image: url('images/storage.png')"></div>
+                            <div class="fake-label">Storage + Transport Equipment</div>
+                            <ul>
+                                <li><a href="#">Brine Storage Tanks</a></li>
+                            </ul>
+                        </div>
+                        <div class="cat-nav col-2">
+                            <div class="fake-img def-bg" style="background-image: url('images/sprayer.png')"></div>
+                            <div class="fake-label">Liquid Sprayers</div>
+                            <ul>
+                                <li><a href="#">Liquid Master® U-Series</a></li>
+                                <li><a href="#">Liquid Master® T-Series</a></li>
+                                <li><a href="#">Liquid Master® E-Series</a></li>
+                                <li><a href="product.html">Liquid Master® EM-Series</a></li>
+                                <li><a href="#">Liquid Master® W-Series</a></li>
+                                <li><a href="#">Ice Control Boom</a></li>
+                                <li><a href="#">Ice Control Boom Mount</a></li>
+                                <li><a href="#">Storage Stand</a></li>
+                                <li><a href="#">Self Loading Legs</a></li>
+                                <li><a href="#">Baffle Balls</a></li>
+                            </ul>
+                        </div>
+                        <div class="cat-nav col-2">
+                            <div class="fake-img def-bg" style="background-image: url('images/diesel.png')"></div>
+                            <div class="fake-label">Diesel Refueling Units</div>
+                            <ul>
+                                <li><a href="#">Diesel Fuel Boss®</a></li>
+                            </ul>
+                        </div>
+                        <div class="cat-nav col-2">
+                            <div class="fake-img def-bg" style="background-image: url('images/parts.png')"></div>
+                            <div class="fake-label"><a href="#">Shop Parts</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
           </div>
-        </div>
-        <div class="dropbox-parent db-link">
-          <a href="master-training.html">
-            Master Training Video
-          </a>
-          <div class="navdropbox">
-              <div class="container-fluid">
-                  <div class="col-11 col-center">
-                      <div class="row">
-                          <div class="cat-nav offset-1 col-2">
-                              <div class="fake-img"></div>
-                              <div class="fake-label">Brine Master</div>
-                              <ul>
-                                  <li><a href="#">Brine Master®</a></li>
-                              </ul>
-                          </div>
-                          <div class="cat-nav col-2">
-                              <div class="fake-img"></div>
-                              <div class="fake-label">Storage + Transport Equipment</div>
-                              <ul>
-                                  <li><a href="#">Brine Storage Tanks</a></li>
-                              </ul>
-                          </div>
-                          <div class="cat-nav col-2">
-                              <div class="fake-img"></div>
-                              <div class="fake-label">Liquid Sprayers</div>
-                              <ul>
-                                  <li><a href="#">Liquid Master® U-Series</a></li>
-                                  <li><a href="#">Liquid Master® T-Series</a></li>
-                                  <li><a href="#">Liquid Master® E-Series</a></li>
-                                  <li><a href="product.html">Liquid Master® EM-Series</a></li>
-                                  <li><a href="#">Liquid Master® W-Series</a></li>
-                                  <li><a href="#">Ice Control Boom</a></li>
-                                  <li><a href="#">Ice Control Boom Mount</a></li>
-                                  <li><a href="#">Storage Stand</a></li>
-                                  <li><a href="#">Self Loading Legs</a></li>
-                                  <li><a href="#">Baffle Balls</a></li>
-                              </ul>
-                          </div>
-                          <div class="cat-nav col-2">
-                              <div class="fake-img"></div>
-                              <div class="fake-label">Diesel Refueling Units</div>
-                              <ul>
-                                  <li><a href="#">Diesel Fuel Boss®</a></li>
-                              </ul>
-                          </div>
-                          <div class="cat-nav col-2">
-                              <div class="fake-img"></div>
-                              <div class="fake-label"><a href="#">Shop Parts</a></div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-        </div>
-
+        </li>
+        <li class="nav-item col-4">
+          <a class="nav-link" href="master-training.html">Learn About Liquids</a>
+        </li>
+      </ul>
+      <ul class="ml-auto navbar-nav d-xl-none d-lg-none d-flex flex-wrap flex-row align-items-center btmNav mobilebtmNav" id="mbbtn">
+        <li class="nav-item col-4">
+          <button class="btmA abtn" id="stack-menu">Snow Removal Pros</button>
+        </li>
+        <li class="nav-item col-4">
+          <button class="btmA abtn" id="stack-menu2">Government</button>
+        </li>
+        <li class="nav-item col-4">
+          <a class="nav-link btmA" href="master-training.html">Learn About Liquids</a>
+        </li>
+      </ul>
+      <div id="stackz">
+        <nav id="stack-menu" style="display: none">
+          <ul>
+            <li>
+              <a href="#">Brine Makers</a>
+              <ul>
+                <li>
+                  <a href="#">Brine Master®</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Storage + Equipment Transport</a>
+              <ul>
+                <li>
+                  <a href="#">Brine Storage Tanks</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Liquid Sprayers</a>
+              <ul>
+                <li><a href="#">Liquid Master® U-Series</a></li>
+                <li><a href="#">Liquid Master® T-Series</a></li>
+                <li><a href="#">Liquid Master® E-Series</a></li>
+                <li><a href="product.html">Liquid Master® EM-Series</a></li>
+                <li><a href="#">Liquid Master® W-Series</a></li>
+                <li><a href="#">Ice Control Boom</a></li>
+                <li><a href="#">Ice Control Boom Mount</a></li>
+                <li><a href="#">Storage Stand</a></li>
+                <li><a href="#">Self Loading Legs</a></li>
+                <li><a href="#">Baffle Balls</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Diesel Refueling Units</a>
+              <ul>
+                <li><a href="#">Diesel Fuel Boss®</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="bbLink">Shop Parts</a>
+            </li>
+            <li>
+              <a href="government.html" class="spLink">Snow Removal Pros <i class="fas fa-chevron-right"></i></a>
+            </li>
+          </ul>
+        </nav>
+        <nav id="stack-menu2" style="display: none">
+          <ul>
+            <li>
+              <a href="#">Brine Makers</a>
+              <ul>
+                <li>
+                  <a href="#">Brine Master®</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Storage + Equipment Transport</a>
+              <ul>
+                <li>
+                  <a href="#">Brine Storage Tanks</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Liquid Sprayers</a>
+              <ul>
+                <li><a href="#">Liquid Master® U-Series</a></li>
+                <li><a href="#">Liquid Master® T-Series</a></li>
+                <li><a href="#">Liquid Master® E-Series</a></li>
+                <li><a href="product.html">Liquid Master® EM-Series</a></li>
+                <li><a href="#">Liquid Master® W-Series</a></li>
+                <li><a href="#">Ice Control Boom</a></li>
+                <li><a href="#">Ice Control Boom Mount</a></li>
+                <li><a href="#">Storage Stand</a></li>
+                <li><a href="#">Self Loading Legs</a></li>
+                <li><a href="#">Baffle Balls</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Diesel Refueling Units</a>
+              <ul>
+                <li><a href="#">Diesel Fuel Boss®</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="bbLink">Shop Parts</a>
+            </li>
+            <li>
+              <a href="snow-removal.pros.html" class="spLink">Government <i class="fas fa-chevron-right"></i></a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   </header>
@@ -442,7 +514,7 @@
       </div>
     </div>  
   </section>
-  <footer class="def-space">
+  <footer class="sm-space pb-2">
     <div class="container">
       <div class="row">
         <div class="col-3">
@@ -477,7 +549,7 @@
             </ul>
           </div>
         </div>
-        <div class="col-3">
+        <div class="offset-1 col-2">
           <div class="widget">
             <h4>Support</h4>
             <ul>
@@ -496,27 +568,31 @@
             </ul>
           </div>
         </div>
-        <div class="col-3">
+        <div class="col-3 text-right">
           <div class="widget">
             <h4>Join The Master Crew</h4>
             <form action="">
-              <input type="text">
-              <input type="submit" value="Submit">
+              <div class="inp-btn">
+                <input type="text">
+              </div>
+              <div class="sub-btn">
+                <input type="submit" value="Submit">
+              </div>
             </form>
           </div>
         </div>
       </div>
     </div>
-    <div class="container def-space pb-0">
+    <div class="container def-space pb-0 pt-0">
       <div class="row">
         <div class="col-6">
           <div class="foot-text text-left">
-            <p>2020 Ice Master Systems. All Rights Reserved</p>
+            <p>© 2020 ICE MASTER SYSTEMS®. All Rights Reserved</p>
           </div>
         </div>
         <div class="col-6">
           <div class="foot-text text-right">
-            <p><a href="#">Terms and Condition</a> | <a href="#">Privacy Policy</a></p>
+            <p><a href="#">Terms and Conditions</a> | <a href="#">Privacy Policy</a></p>
           </div>
         </div>
       </div>
@@ -528,6 +604,7 @@
   <script src="vendor/dist/owl.carousel.min.js"></script>
   <script src="vendor/jquery-scrolltofixed.js"></script>
   <script src="vendor/jquery.matchHeight.js"></script>
+  <script src="vendor/jquery-stack-menu.js"></script>
   <script src="main.js"></script>
   </body>
 </html>

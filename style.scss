@@ -7,10 +7,239 @@ $color4: #7c878e;
 $color5: #ffffff;
 
 $font1: 'Aachen';
+$font3: 'Neue Aachen Pro';
 $font2: 'Arial';
+
+
+@mixin respond-to($breakpoint) {
+
+    @if $breakpoint == "xxs" {
+        @media screen and (max-width: 480px) {
+          @content;
+        }
+    }
+
+    @if $breakpoint == "xxs1" {
+        @media screen and (max-width: 576px) {
+          @content;
+        }
+    }
+
+    @if $breakpoint == "xxs2" {
+        @media screen and (max-width: 600px) {
+          @content;
+        }
+    }
+
+    @if $breakpoint == "xs" {
+        @media screen and (max-width: 767px) {
+          @content;
+        }
+    }
+
+    @if $breakpoint == "xs-sm1" {
+        @media screen and (max-width: 800px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == "xs-sm" {
+        @media screen and (max-width: 991px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == "xs-md" {
+        @media screen and (max-width: 1199px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == "sm" {
+        @media (min-width: 768px) and (max-width: 991px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == "sm-lg" {
+        @media (min-width: 768px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == "sm-md" {
+        @media (min-width: 768px) and (max-width: 1199px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == "md" {
+        @media (min-width: 992px) and (max-width: 1199px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == "md-lg" {
+        @media screen and (min-width: 992px)  {
+            @content;
+        }
+    }
+
+    @if $breakpoint == "lg" {
+        @media screen and (min-width: 1200px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == "md2" {
+        @media (min-width: 992px) and (max-width: 1225px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == "small-lg" {
+        @media (min-width: 1200px) and (max-width: 1439px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == "small-lg1" {
+        @media (max-width: 1439px) {
+            @content;
+        }
+    }
+}
+
+body {
+	overflow-x: hidden;
+}
+
+.bo-form {
+	max-width: 500px;
+	margin: 0 auto;
+	.inp-btn {
+		width: calc(100% - 97px);
+		input {
+			width: 100%;
+		}
+	}
+}
 
 .def-space {
 	padding: 100px 20px;
+	@include respond-to("xs-sm") {
+		padding: 50px 20px;
+	}
+}
+
+.sm-space {
+	padding: 50px 20px;
+}
+
+.sub-btn {
+	-ms-transform: skewX(-20deg);
+    -webkit-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+    display: inline-block;
+    background-color: #ff671f;
+    border: solid 1px #ff671f;
+    position: relative;
+    &:before {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		content: "";
+		background-color: #003c71;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		transition: 300ms all ease;
+    }
+
+    &:after {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		content: "";
+		background-color: #ff671f;
+		z-index: -1;
+		left: 0;
+		top: 0;
+		border: solid 1px #ff671f;
+    }
+
+    input {
+		-ms-transform: skewX(20deg);
+		-webkit-transform: skewX(20deg);
+		transform: skewX(20deg);
+		background-color: transparent;
+		border: 0;
+		color: #fff;
+		padding: 5px 10px;
+		height: auto;
+		font-weight: 700;
+		text-transform: uppercase;
+		outline: none;
+		@include respond-to("xs-sm") {
+			font-size: 14px;
+		}
+    }
+
+    &:hover {
+    	&:before {
+			top: 5px;
+			left: 5px;
+    	}
+    }
+}
+
+.inp-btn {
+	-ms-transform: skewX(-20deg);
+	-webkit-transform: skewX(-20deg);
+	transform: skewX(-20deg);
+	display: inline-block;
+	background-color: #fff;
+	border: solid 1px #003c71;
+	position: relative;
+
+	&:before {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		content: "";
+		background-color: #003c71;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		transition: 300ms all ease;
+	}
+
+	&:after {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		content: "";
+		background-color: #fff;
+		z-index: -1;
+		left: 0;
+		top: 0;
+	}
+
+	input {
+		transform: skewX(20deg);
+		background-color: transparent;
+		border: 0;
+		padding: 5px 10px;
+		height: auto;
+		outline: none;
+		font-weight: normal;
+		color: #003c71;
+		text-transform: none;
+		@include respond-to("xs-sm") {
+			font-size: 14px;
+		}
+	}
+
 }
 
 .def-btn {
@@ -27,6 +256,7 @@ $font2: 'Arial';
 		text-decoration: none;
 		color: $color2;
 	}
+
 }
 
 .def-btn-alt {
@@ -35,14 +265,208 @@ $font2: 'Arial';
 	border: solid 1px $color2;
 }
 
-.bo {
+.cked {
+	background-color: $color4;
+	color: $color2;
+	cursor: default;
+}
+
+.bo-wrap {
 	-ms-transform: skewX(-20deg);
 	-webkit-transform: skewX(-20deg);
 	transform: skewX(-20deg); 
+	position: relative;
+    align-self: center;
+	&:before {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		content: '';
+		background-color: #003c71;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		transition: 300ms all ease;
+	}
+
+	&:after {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		content: '';
+		background-color: #ff671f;
+		z-index: -1;
+		left: 0;
+		top: 0;
+	}
+
+	&:hover {
+		&:before {
+			top: 5px;
+			left: 5px;
+		}
+	}
+}
+
+.bo {
+	-ms-transform: skewX(0deg);
+	letter-spacing: 1px;
+	-webkit-transform: skewX(0deg);
+	transform: skewX(0deg); 
 	color: $color5 !important; 
 	padding-left: 1rem  !important;
 	padding-right: 1rem  !important;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	border-radius: 0;
+	font-family: $font1 !important;
+	font-size: 24px !important;
+
+	@include respond-to("small-lg1") {
+		font-size: 20px !important;
+	}
+
+	@include respond-to("xxs") {
+		padding-left: 10px  !important;
+		padding-right: 10px  !important;
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+}
+
+.nav-pills {
+	.nav-item {
+		-ms-transform: skewX(-20deg);
+		-webkit-transform: skewX(-20deg);
+		transform: skewX(-20deg); 
+		display: inline-block;
+		background-color: $color1;
+		position: relative;
+		margin-left: 20px;
+		margin-right: 20px;
+		text-align: center;
+		&:before {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			content: '';
+			background-color: #003c71;
+			z-index: -1;
+			top: 0;
+			left: 0;
+			transition: 300ms all ease;
+		}
+
+		&:after {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			content: '';
+			background-color: #ff671f;
+			z-index: -1;
+			left: 0;
+			top: 0;
+		}
+
+		a {
+			-ms-transform: skewX(20deg);
+			-webkit-transform: skewX(20deg);
+			transform: skewX(20deg);
+			color: $color5;
+			background-color: #ffffff00 !important;
+			text-transform: uppercase;
+			margin: 0 !important;
+			&:hover {
+				color: $color5;
+			}
+		}
+
+		&:hover {
+			&:before {
+				top: 5px;
+				left: 5px;
+			}
+		}
+
+		@include respond-to("xs-sm") {
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+
+		@include respond-to("xxs") {
+			margin-left: 5px;
+			margin-right: 5px;
+			max-width: 220px;
+			width: 100%;
+		}
+	}
+}
+
+.lmore-wrap {
+	-ms-transform: skewX(-20deg);
+	-webkit-transform: skewX(-20deg);
+	transform: skewX(-20deg); 
+	display: inline-block;
+	background-color: $color1;
+	position: relative;
+	&.v2 {
+		border: solid 1px $color2;	
+		background-color: $color5;
+		&:before {
+		}
+		&:after {
+			background-color: $color5;
+		}
+		a {
+			color: $color2;
+		}
+		&:hover {
+			a {
+				color: $color2;
+			}
+		}
+	}
+	&:before {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		content: '';
+		background-color: $color2;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		transition: 300ms all ease;
+	}
+
+	&:after {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		content: '';
+		background-color: #ff671f;
+		z-index: -1;
+		left: 0;
+		top: 0;
+	}
+
+	a {
+		-ms-transform: skewX(20deg);
+		-webkit-transform: skewX(20deg);
+		transform: skewX(20deg);
+		color: $color5;
+		background-color: #ffffff00;
+		text-transform: uppercase;
+		&:hover {
+			color: $color5;
+		}
+	}
+
+	&:hover {
+		&:before {
+			top: 5px;
+			left: 5px;
+		}
+	}
 }
 
 .col-center {
@@ -52,6 +476,15 @@ $font2: 'Arial';
 .btn-xl {
 	padding: 15px 30px;
 	font-size: 18px;
+	@include respond-to(small-lg1) {
+		padding: 15px 25px;
+		font-size: 16px;
+	}
+
+	@include respond-to("xs-sm") {
+	    padding: 7.5px 12.5px;
+	    font-size: 14px;
+	}
 }
 
 a {
@@ -66,6 +499,10 @@ p {
 	margin-bottom: 15px;
 	&:last-child {
 		margin-bottom: 0;
+	}
+
+	@include respond-to("small-lg1") {
+		font-size: 18px;
 	}
 }
 
@@ -87,10 +524,34 @@ header {
 		p {
 			font-size: 14px;
 			margin-bottom: 0;
+			@include respond-to("xs-sm") {
+				font-size: 12px;
+			}
 		}
 	}
 
 	.middle-bar {
+		.tabLogo,
+		.phoneLogo {
+			display: none;
+		}
+
+		.tabLogo {
+			@include respond-to("xs") {
+				display: block;
+			}
+
+			@include respond-to("xxs") {
+				display: none;
+			}
+		}
+
+		.phoneLogo {
+			@include respond-to("xxs") {
+				display: block;
+			}
+		}
+
 		.navbar-nav {
 			.nav-link {
 				padding-left: 1rem;
@@ -108,6 +569,10 @@ header {
 						color: $color2;
 						vertical-align: baseline;
 						transition: 300ms all ease;
+						@include respond-to("xs-sm") {
+							right: 0;
+							position: absolute;
+						}
 					}
 
 					&[aria-expanded="true"] {
@@ -115,6 +580,10 @@ header {
 							transform: rotate(180deg);
 						}
 					}
+				}
+
+				@include respond-to("small-lg1") {
+					font-size: 14px;
 				}
 			}
 
@@ -125,15 +594,31 @@ header {
 					padding-left: 0;
 					padding-right: 0;
 					transition: 300ms all ease;
+				    outline: none;
 					&:hover {
 						color: $color1;
+						&:after {
+							color: $color1;
+						}
 					}
 				}
+
 				&.dropdown {
 					&.show {
 						.dropdown-menu {
 							max-height: 300px;
 							opacity: 1;
+						    padding: .5rem 0;
+						    @include respond-to("xs-sm") {
+						    	max-height: 1000px;
+						    }
+						}
+
+						.dropdown-toggle {
+							color: $color1;
+							&:after {
+								color: $color1;
+							}
 						}
 					}
 
@@ -143,12 +628,33 @@ header {
 						-ms-transition: all 0.3s;
 						-o-transition: all 0.3s;
 						transition: all 0.3s;
-
 						max-height: 0;
 						display: block;
 						overflow: hidden;
 						opacity: 0;
+						padding: 0;
+						@include respond-to("xs-sm") {
+							border: 0;
+							padding: 0 !important;
+						}
+
+						a {
+							@include respond-to("xs-sm") {
+								padding: .25rem 0;
+								font-size: 14px;
+							}
+						}
 					}
+				}
+
+				&:not(.show) {
+					overflow: hidden;
+				}
+
+
+				@include respond-to("xs-md") {
+					margin-left: .5rem;
+					margin-right: .5rem;
 				}
 			}
 
@@ -159,37 +665,471 @@ header {
 					color: $color1;
 				}
 			}
+
+			@include respond-to("xs-sm") {
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+		}
+
+		.bo-wrap {
+			&:not(.mbo) {
+				@include respond-to("xs-sm") {
+					display: none;
+				}
+			}
+		}
+
+		.navbar-collapse {
+			@include respond-to("xs-sm") {
+			    position: fixed;
+			    top: 0;
+			    right: 0;
+			    height: 100%;
+			    width: 0;
+			    background-color: #fff;
+			    z-index: 9;
+			    padding-top: 130px;
+			    transition: 300ms width ease;
+			}
+
+			&.show {
+				@include respond-to("xs-sm") {
+					width: 300px;
+				}
+			}
+		}
+
+		.mbo {
+			a {
+				@include respond-to("xs-sm") {
+					font-size: 16px !important;
+				}
+			}
 		}
 	}
 
 	.bottom-bar {
-		.persona-wrap {
-			position: relative;
-			background-color: $color2;
-			border: 1px solid #fff;
-			> {
-				.nav-link {
-					font-size: 20px;
-					color: #fff;
-					display: inline-block;
+		border-bottom: solid 1px $color5;
+		.btmNav {
+			font-family: $font2;
+			> .nav-item {
+				background-color: $color2;
+			    padding: 10px 20px;
+			    transition: 300ms all ease;
+				> a {
+					color: $color5;
+					font-size: 18px;
 					font-weight: 700;
+					text-transform: uppercase;
+					position: relative;
+					padding: 0;
+					&.dropdown-toggle {
+						&:after {
+						    border: 0;
+						    content: "\f078";
+						    font-family: "Font Awesome 5 Free";
+						    font-weight: 900;
+						    color: $color5;
+						    vertical-align: baseline;
+						    transition: 300ms all ease;
+						    position: absolute;
+						    right: 0;
+						}
+
+					}
+
+					@include respond-to("small-lg1") {
+						font-size: 1.125rem;
+					}
+
+					@include respond-to("xs-md") {
+						font-size: 16px;
+					}
+				}
+
+				&.show {
+					background-color: $color1;
+					.dropdown-menu {
+						max-height: calc(95vh - 190px);
+						visibility: visible;
+						transform: none !important;
+						will-change: unset !important;
+						border-top: solid 1px $color5;
+					}
+
+					.dropdown-toggle {
+						&:after {
+							transform: rotate(180deg);
+						}
+					}
+				}
+
+				.dropdown-menu {
+					left: 0 !important;
+					top: 189px !important;
+					position: fixed !important;
+					border-radius: 0px;
+					width: 100%;
+					background-color: $color5;
+					display: block;
+				    max-height: 0;
+					visibility: hidden;
+					transition: all 0.5s ;
+					overflow: hidden;
+					padding-top: 0px;
+					padding-bottom: 0px;
+					border-bottom: solid 1px $color5;
+					background-clip: initial;
+					margin: 0;
+					-webkit-transition: all 0.3s;
+					-moz-transition: all 0.3s;
+					-ms-transition: all 0.3s;
+					-o-transition: all 0.3s;
+					transition: all 0.3s;
+					overflow: hidden;
+					-webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.20);
+					-moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.20);
+					box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.20);
+
+					.container-fluid {
+						padding-top: 20px;
+						padding-bottom: 20px;
+					}
+
+					.custom-col {
+						@include respond-to("small-lg1") {
+						-ms-flex: 0 0 100%;
+						flex: 0 0 100%;
+						max-width: 100%;
+						}
+					}
+
+					.cat-nav-label {
+						@include respond-to("small-lg1") {
+						    margin-left: 0;
+						}
+					}
+
+					.cat-nav {
+						@include respond-to("small-lg1") {
+							margin-left: 0;
+							-ms-flex: 0 0 20%;
+							flex: 0 0 20%;
+							max-width: 20%;
+							padding-left: 10px;
+							padding-right: 10px;
+
+						}
+					}
+
+					.pers-btn {
+						font-size: 24px;
+						font-weight: 700;
+						text-decoration: none;
+						color: $color1;
+						position: relative;
+						text-transform: uppercase;
+						transition: 300ms all ;
+						font-family: $font3;
+						font-weight: bold;
+						font-style: italic;
+						&:after {
+							content: '\f054';
+							font-family: 'Font Awesome 5 Free';
+							transition: 300ms all ;
+							color: $color1;
+							margin-left: 5px;
+						}
+
+						&:hover {
+							color: $color2;
+							&:after {
+								color: $color2;
+								margin-left: 10px;
+							}
+						}
+
+						@include respond-to("small-lg1") {
+							font-size: 1.5rem;
+						}
+
+						@include respond-to("xs-md") {
+							font-size: 20px;
+						}
+					}
+
+					.fake-img {
+						width: 100%;
+						height: 200px;
+						@include respond-to("small-lg1") {
+							height: 175px;
+						}
+					}
+
+					.fake-label {
+						color: $color1;
+						font-size: 18px;
+						font-weight: 700;
+						margin-top: 10px;
+						font-family: $font3;
+						font-weight: bold;
+						font-style: italic;
+						text-transform: uppercase;
+						> a {
+							text-decoration: none;
+							color: #ff671f;
+						}
+
+						@include respond-to("small-lg1") {
+							font-size: 1.25rem;
+						}
+
+						@include respond-to("xs-md") {
+							font-size: 16px;
+						}
+					}
+
+					ul {
+						padding: 0;
+						list-style-type: none;
+						margin: 0;
+						margin-top: 20px;
+						li {
+							a {
+								font-size: 18px;
+								color: $color2;
+								text-decoration: none;
+								transition: 300ms all ease;
+								font-weight: 400;
+								&:hover {
+									color: $color1;
+								}
+
+								@include respond-to("small-lg1") {
+									font-size: 1rem;
+								}
+
+								@include respond-to("xs-md") {
+									font-size: 14px;
+								}
+							}
+						}
+
+						@include respond-to("small-lg1") {
+							margin-top: 10px;
+						}
+					}
+
+					@include respond-to("xs-md") {
+					    top: 187px !important;
+					}
+
+					@include respond-to("xs-sm") {
+					    top: 183px !important;
+					}
+				}
+
+				&:nth-child(even) {
+					border-left: 1px $color5 solid;
+					border-right: 1px $color5 solid;
+				}
+
+				&:hover {
+					background-color: $color1;
+				}
+
+				.cat-nav-label {
+
 				}
 			}
 
-			.dropdown-toggle {
-				position: absolute;
-				top: 0;
-				right: 0;
-				bottom: 0;
-				margin: auto;
-				font-size: 20px;
-				&:after {
-					display: none;				
+			&.mobilebtmNav {
+				> .nav-item {
+					padding: 10px;
+					a {
+						&.dropdown-toggle {
+							&:after {
+								@include respond-to("xxs2") {
+									right: 0;
+									left: 0;
+									margin: auto;
+									width: 13px;
+									bottom: 0;
+									display: none;
+								}
+							}
+						}
+
+						@include respond-to("xs") {
+							font-size: 14px;
+							word-break: break-word;
+							white-space: normal;
+						}
+
+						@include respond-to("xxs1") {
+							font-size: 12px;
+							text-align: center;
+						}
+					}
+
+					button,
+					a.btmA {
+						font-size: 16px;
+						color: #fff;
+						font-family: "Arial";
+						outline: none;
+						border: 0;
+						text-transform: uppercase;
+						background: none;
+						font-weight: 700;
+						line-height: 1.5;
+						margin: 0;
+						display: block;
+						width: 100%;
+						text-align: left;
+						padding: 10px;
+						@include respond-to("xs") {
+							font-size: 14px;
+							word-break: break-word;
+							white-space: normal;
+						}
+
+						@include respond-to("xxs1") {
+							font-size: 12px;
+							text-align: center;
+						}
+					}
+
+					.abtn {
+						background-color: $color2;
+						&.active {
+							background-color: $color1;
+						}
+					}
+
+					.dropdown-menu {
+						display: none;
+						.fake-label {
+						margin-top: 0;
+						margin-bottom: 10px;
+							label {
+								margin-top: 0;
+								vertical-align: middle;
+								margin-bottom: 0;
+								color: $color2;
+								line-height: 1;
+							}
+
+							.fake-dd {
+								display: none;
+							}
+						}
+
+						@include respond-to("xs") {
+						    top: 156px !important;
+						}
+					}
+
+					@include respond-to("xs-sm") {
+						padding: 0;
+					}
 				}
+
+				.cb-wrap {
+					display: inline-block;
+					margin-left: 10px;
+					vertical-align: middle;
+					line-height: 1;
+					height: 19px;
+					width: 15px;
+					position: relative;
+					input {
+						height: 100%;
+						width: 100%;
+						border: 0;
+					}
+
+					&:before {
+						border: 0;
+						content: "\f078";
+						font-family: "Font Awesome 5 Free";
+						font-weight: 900;
+						color: $color2;
+						vertical-align: baseline;
+						transition: 300ms all ease;
+						position: absolute;
+						right: 0;
+						z-index: -1;
+						transform: rotate(-90deg);
+					}
+				}
+
 			}
 
-			.dropdown-menu {
+			.stack-menu {
+				background-color: $color2 !important;
+			}
+		}
+	}
+
+	.navbar-toggler {
+		border: solid 2px $color5;
+		border-radius: 0;
+		padding: 5px;
+		outline: none;
+		z-index: 99;
+		.navbar-toggler-icon {
+			position: relative;
+			height: 1em;
+			vertical-align: baseline;
+			.nb-bar {
+				height: 2px;
 				width: 100%;
+				background-color: $color2;
+				position: absolute;
+				left: 0;
+				right: 0;
+				&.top {
+					top: 0;
+					transition: 300ms all ease;
+				}
+
+				&.mid {
+					bottom: 0;
+					top: 0;
+					margin: auto;
+					transition: 300ms all ease;
+				}
+
+				&.btm {
+					bottom: 0;
+					transition: 300ms all ease;
+				}
+			}
+		}
+
+		&[aria-expanded="true"] {
+			.navbar-toggler-icon {
+				.nb-bar {
+					&.top {
+						bottom: 0;
+						margin: auto;
+						top: 0;
+						transform: rotate(135deg);
+					}
+
+					&.mid {
+						opacity: 0;
+					}
+
+					&.btm {
+						bottom: 0;
+						margin: auto;
+						top: 0;
+						transform: rotate(-135deg);
+					}
+				}
 			}
 		}
 	}
@@ -197,22 +1137,55 @@ header {
 
 
 .banner-default {
-	height: calc(100vh - 190px);
+	height: calc(85vh - 190px);
 	position: relative;
 	background-attachment: fixed;
 	h1 {
 		font-size: 72px;
 		color: $color1;
-		font-family: $font1;
+		font-family: $font3;
+		font-weight: bold;
+		font-style: italic;
+		text-transform: uppercase;
+		@include respond-to("small-lg1") {
+			font-size: 66px;
+		}
+
+		@include respond-to("xs-md") {
+			font-size: 60px;
+		}
+
+		@include respond-to("xs-md") {
+			font-size: 42px;
+		}
+
+		@include respond-to("xs") {
+			font-size: 36px;
+		}
+
+		@include respond-to("xxs1") {
+			font-size: 30px;
+		}
 	}
 
 	p {
 		color: #fff;
+		@include respond-to("xs-md") {
+			font-size: 14px;
+		}
 	}
 
 	.intro-img {
 		height: 500px;
-		width: 500px;
+		width: 100%;
+		iframe {
+			width: 100%;
+			max-width: 540px;
+		}
+
+		@include respond-to("xs-sm") {
+			height: 275px;
+		}
 	}
 
 	&.with-overlay {
@@ -228,14 +1201,29 @@ header {
 	}
 
 	&.v2 {
+		height: calc(95vh - 190px);
 		background-color: $color2;
 		p {
 			color: $color5;
+			@include respond-to("xs-sm") {
+				font-size: 14px;
+			}
+		}
+
+		@include respond-to("small-lg1") {
+			height: auto;
 		}
 	}
 
 	&.smaller-banner {
 		height: calc(60vh);
+		@include respond-to("xs") {
+			height: calc(40vh);
+		}
+	}
+
+	@include respond-to("small-lg1") {
+		height: auto;
 	}
 }
 
@@ -243,7 +1231,40 @@ header {
 	h2 {
 		font-size: 52px;
 		color: $color1;
-		font-family: $font1;
+		text-transform: uppercase;
+		font-family: $font3;
+		font-weight: bold;
+		font-style: italic;
+	}
+
+	&.v2 {
+		h2 {
+			font-family: $font3;
+			font-weight: bold;
+			font-style: italic;
+			font-size: 72px;
+			text-transform: uppercase;
+			margin-bottom: 0;
+			@include respond-to("small-lg1") {
+				font-size: 66px;
+			}
+
+			@include respond-to("xs-md") {
+				font-size: 60px;
+			}
+
+			@include respond-to("xs-md") {
+				font-size: 42px;
+			}
+
+			@include respond-to("xs") {
+				font-size: 36px;
+			}
+
+			@include respond-to("xxs1") {
+				font-size: 30px;
+			}
+		}
 	}
 
 	.serv-box {
@@ -252,6 +1273,13 @@ header {
 			height: 275px;
 			width: 100%;
 			display: block;
+			@include respond-to("xs-sm") {
+				height: 175px;
+			}
+
+			@include respond-to("xxs") {
+				height: 210px;
+			}
 		}
 
 		.serv-capt {
@@ -259,13 +1287,39 @@ header {
 				font-size: 24px;
 				font-weight: 700;
 				color: $color1;
-				font-family: $font1;
+				text-transform: uppercase;
+				font-family: $font3;
+				font-weight: bold;
+				font-style: italic;
+				@include respond-to("small-lg1") {
+					font-size: 22px;
+				}
+
+				@include respond-to("xs-md") {
+					font-size: 20px;
+				}
+
+				@include respond-to("xs-sm") {
+					font-size: 16px;
+					margin-bottom: 10px;
+				}
 			}
 
 			p {
 				font-size: 18px;
 				color: $color2;
 				margin-bottom: 10px;
+				@include respond-to("small-lg1") {
+					font-size: 16px;
+				}
+
+				@include respond-to("xs-sm") {
+					margin-bottom: 5px;
+					font-size: 14px;
+					line-height: 18px;
+					max-height: 90px;
+					overflow: hidden;
+				}
 			}
 
 			a {
@@ -273,8 +1327,32 @@ header {
 				text-decoration: none;
 				font-weight: 700;
 				color: $color2;
+				@include respond-to("small-lg1") {
+					font-size: 16px;
+				}
+
+				@include respond-to("xs-sm") {
+					font-size: 14px;
+				}
 			}
 		}
+
+		.col-6 {
+			@include respond-to("xs-sm") {
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+		}
+	}
+
+	.def-btn {
+		text-transform: uppercase;
+		color: #fff;
+		border-radius: 0;
+		-ms-transform: skewX(20deg);
+		-webkit-transform: skewX(20deg);
+		transform: skewX(20deg); 
+		background-color: transparent;
 	}
 }
 
@@ -282,20 +1360,39 @@ header {
 	.info-box {
 		height: 400px;
 		position: relative;
-		padding: 10px;
+		padding: 20px;
 		.info-capt {
 			position: relative;
 			h3 {
 				font-size: 24px;
 				font-weight: 700;
 				color: $color1;
-				font-family: $font1;
+				font-family: $font3;
+				font-weight: bold;
+				font-style: italic;
+				text-transform: uppercase;
+				@include respond-to("small-lg1") {
+					font-size: 20px;
+				}
+
+				@include respond-to("xs-sm") {
+					font-size: 16px;
+				}
 			}
 
 			p {
 				font-size: 18px;
 				color: $color5;
-				margin-bottom: 10px;
+				@include respond-to("small-lg1") {
+					font-size: 16px;
+				}
+
+				@include respond-to("xs-sm") {
+					font-size: 14px;
+					line-height: 18px;
+					max-height: 54px;
+					overflow-x: hidden;
+				}
 			}
 		}
 		&:before {
@@ -307,15 +1404,68 @@ header {
 			background-color: rgba(0,0,0,.5);
 			position: absolute;
 		}
+
+		@include respond-to("xs-sm") {
+			height: 300px;
+		}
+	}
+	.owl-nav {
+		 [class*='owl-']:hover {
+		   	background: #ffffff00 !important;
+		   	border: 0 !important;
+		   	outline: none !important;
+		 }
+	}
+	.owl-next, .owl-prev {
+	    width: 15px;
+	    height: auto;
+	    position: absolute;
+	    top: 50%;
+	    transform: translateY(-50%);
+	    display: block !important;
+	    border: 0px solid black;	
+		background: #ffffff00 !important;
+		border: 0 !important;
+		outline: none !important;
+	   i {
+			font-size: 20px;
+			color: $color5;
+	   }
+
+	   &:hover {
+	   }
+	}
+
+	.owl-prev {
+		left: 20px;
+	}
+
+	.owl-next {
+		right: 20px;
 	}
 }
 
 .appli {
 	h2 {
 		font-size: 52px;
-		color: $color2;
-		font-family: $font1;
+		color: $color1;
+		font-family: $font3;
+		font-weight: bold;
+		font-style: italic;
 		margin-bottom: 40px;
+		text-transform: uppercase;
+
+		@include respond-to("xs-md") {
+			font-size: 42px;
+		}
+
+		@include respond-to("xs") {
+			font-size: 36px;
+		}
+
+		@include respond-to("xxs1") {
+			font-size: 30px;
+		}
 	}
 
 	.appli-box {
@@ -331,8 +1481,33 @@ header {
 		h3 {
 			font-size: 42px;
 			color: $color1;
-			font-family: $font1;
+			font-family: $font3;
+			font-weight: bold;
+			font-style: italic;
 			margin-bottom: 0;
+			text-transform: uppercase;
+			@include respond-to("xs-sm") {
+				font-size: 30px;
+			}
+		}
+
+		@include respond-to("xs-sm") {
+			height: 50vw;
+			min-height: 300px;
+		}
+	}
+
+	.owl-nav {
+		 [class*='owl-']:hover {
+		   	background: #ffffff00 !important;
+		   	border: 0 !important;
+		   	outline: none !important;
+		 }
+	}
+
+	.owl-item {
+		.item {
+			padding: 0 2.5px;
 		}
 	}
 
@@ -345,6 +1520,7 @@ header {
 		.owl-prev {
 			position: absolute;
 			left: -30px;
+			color: $color2 !important;
 			&:before{
 				font-family: 'Font Awesome 5 Free';
 				font-weight: 900;
@@ -354,6 +1530,7 @@ header {
 		.owl-next {
 			position: absolute;
 			right: -30px;
+			color: $color2 !important;
 			&:before{
 				font-family: 'Font Awesome 5 Free';
 				font-weight: 900;
@@ -364,25 +1541,73 @@ header {
 
 .feature {
 	.feat-box {
-		min-height: 75vh;
-		height: 0;
+		// min-height: 75vh;
+		// height: 0;
 		.fake-img {
-
-			height: 100%;
 			width: 100%;
+			height: 75vh;
+
+			@include respond-to("small-lg1") {
+				height: 65vh;
+			}
+
+			@include respond-to("xs-sm") {
+				height: 50vh;
+			}
+
+			@include respond-to("xs") {
+				height: 350px;
+			}
 		}
+
 		.feat-capt {
 			h2 {
 				font-size: 42px;
-				color: $color2;
-				font-family: $font1;
+				color: $color1;
+				font-family: $font3;
+				font-weight: bold;
+				font-style: italic;
 				margin-bottom: 20px;
+				text-transform: uppercase;
+				@include respond-to("small-lg1") {
+					font-size: 36px;
+				}
+
+				@include respond-to("xs-sm") {
+					margin-bottom: 10px;
+					font-size: 30px;
+				}
+
+				@include respond-to("xs") {
+					margin-bottom: 10px;
+					font-size: 24px;
+				}
 			}
 
 			p {
 				font-size: 18px;
 				color: $color2;
+				@include respond-to("small-lg1") {
+					font-size: 16px;
+				}
+
+				@include respond-to("xs-sm") {
+					font-size: 14px;
+				}
 			}
+		}
+
+		@include respond-to("small-lg1") {
+			// min-height: 65vh;
+		}
+
+		@include respond-to("xs-sm") {
+			// min-height: 50vh;
+		}
+
+		@include respond-to("xs") {
+			// min-height: auto;
+			// height: auto
 		}
 	}
 
@@ -393,6 +1618,9 @@ header {
 			font-weight: 900;
 			color: $color2;
 			margin-bottom: 50px;
+			@include respond-to("xs-sm") {
+				font-size: 36px;
+			}
 		}
 	}
 }
@@ -408,9 +1636,19 @@ header {
 
 	h2 {
 		font-size: 42px;
-		color: $color2;
-		font-family: $font1;
+		color: $color1;
+		font-family: $font3;
+		font-weight: bold;
+		font-style: italic;
 		margin-bottom: 20px;
+		text-transform: uppercase;
+		@include respond-to("small-lg1") {
+			font-size: 36px;
+		}
+
+		@include respond-to("xxs1") {
+			font-size: 30px;
+		}
 	}
 
 	h3 {
@@ -418,22 +1656,46 @@ header {
 		font-family: $font2;
 		font-weight: 900;
 		font-size: 24px;
+		text-transform: uppercase;
+		@include respond-to("small-lg1") {
+			font-size: 20px;
+		}
+
+		@include respond-to("xs-sm") {
+			font-size: 18px;
+		}
 	}
 
 	h4 {
 		color: $color2;
 		font-family: $font2;
 		font-size: 14px;
+		@include respond-to("small-lg1") {
+			font-size: 12px;
+		}
 	}
 
 	.box-cont {
 		margin-top: 20px;
+		input {
+			margin-right: 10px;
+			@include respond-to("xs-sm") {
+				margin-right: 5px;
+			}
+		}
 		label {
 			color: $color2;
 			display: block;
 			font-family: $font2;
 			font-weight: 500;
 			font-size: 24px;
+			@include respond-to("small-lg1") {
+				font-size: 20px;
+			}
+
+			@include respond-to("xs-sm") {
+				font-size: 16px;
+			}
 		}
 	}
 }
@@ -441,22 +1703,31 @@ header {
 .case-studies {
 	h2 {
 		font-size: 42px;
-		color: $color2;
-		font-family: $font1;
+		color: $color1;
+		font-family: $font3;
+		font-weight: bold;
+		font-style: italic;
 		margin-bottom: 40px;
+		text-transform: uppercase;
+		@include respond-to("xs-sm") {
+			font-size: 36px;
+		}
+
+		@include respond-to("xxs1") {
+			font-size: 30px;
+		}
 	}
 
 	.case-box {
 		position: relative;
-		height: 450px;
-		display: table;
-		border: 1px solid $color2;
+		height: 400px;
 		.case-capt {
-			display: table-cell;
-			vertical-align: bottom;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
 			.case-wrap {
 				padding: 10px;
-				background-color: $color5;
 				position: relative;
 			}
 
@@ -464,11 +1735,29 @@ header {
 				font-size: 24px;
 				font-weight: 900;
 				color: $color1;
+				font-family: $font3;
+				font-weight: bold;
+				font-style: italic;
+				text-transform: uppercase;
+				@include respond-to("small-lg1") {
+					font-size: 20px;
+				}
+
+				@include respond-to("xs-sm") {
+					font-size: 18px;
+				}
 			}
 
 			p {
 				font-size: 18px;
-				color: $color2;
+				color: $color5;
+				@include respond-to("small-lg1") {
+					font-size: 16px;
+				}
+
+				@include respond-to("xs-sm") {
+					font-size: 14px;
+				}
 			}
 		}
 
@@ -479,9 +1768,13 @@ header {
 			top: 0;
 			right: 0;
 			bottom: 0;
-			background-color: rgba(0, 0, 0, .2);
+			background-color: rgba(0, 0, 0, .5);
 			height: 100%;
 			width: 100%;
+		}
+
+		@include respond-to("xs-md") {
+			height: 300px;
 		}
 	}
 }
@@ -490,17 +1783,53 @@ header {
 	h1 {
 		font-size: 72px;
 		color: $color1;
-		font-family: $font1;
+		font-family: $font3;
+		font-weight: bold;
+		font-style: italic;
+		text-transform: uppercase;
+		@include respond-to("small-lg1") {
+			font-size: 66px;
+		}
+
+		@include respond-to("xs-md") {
+			font-size: 60px;
+		}
+
+		@include respond-to("xs-md") {
+			font-size: 42px;
+		}
+
+		@include respond-to("xs") {
+			font-size: 36px;
+		}
+
+		@include respond-to("xxs1") {
+			font-size: 30px;
+		}
 	}
 	
 	p {
 		font-size: 18px;
 		color: $color2;
+		@include respond-to("xs-sm") {
+			font-size: 14px;
+		}
 	}
 
 	&.v2 {
 		h1 {
 			font-size: 54px;
+			@include respond-to("xs-md") {
+				font-size: 42px;
+			}
+
+			@include respond-to("xs") {
+				font-size: 36px;
+			}
+
+			@include respond-to("xxs1") {
+				font-size: 30px;
+			}
 		}
 	}
 
@@ -521,6 +1850,37 @@ header {
 		.fake-img {
 			height: 350px;
 			background-color: $color4;
+			@include respond-to("xs-sm") {
+				height: 275px;
+			}
+
+			@include respond-to("xs") {
+				height: 225px;
+				max-width: 400px;
+				margin: 0 auto;
+				margin-bottom: 20px;
+			}
+		}
+
+		form {
+			.inp-btn {
+				input {
+					@include respond-to("xs") {
+						width: 100%;
+					}
+				}
+
+				@include respond-to("xs") {
+					width: 100%;
+					margin-bottom: 20px;
+				}
+			}
+
+			@include respond-to("xs") {
+				max-width: 300px;
+				margin: 0 auto;
+				width: 100%;
+			}
 		}
 	}
 }
@@ -528,9 +1888,9 @@ header {
 .manu {
 	.manu-box {
 		margin-bottom: 30px;
-		border: 2px solid $color4;
+		border: 2px solid $color2;
 		.manu-head {
-			background-color: $color4;
+			background-color: $color2;
 			color: $color2;
 			padding: 10px;
 			text-align: center;
@@ -538,6 +1898,23 @@ header {
 				font-weight: 700;
 				font-size: 24px;
 				margin-bottom: 0;
+				color: $color5;
+				font-family: $font3;
+				font-weight: bold;
+				font-style: italic;
+				text-transform: uppercase;
+				@include respond-to("small-lg1") {
+					font-size: 22px;
+				}
+
+				@include respond-to("xs-sm") {
+					font-size: 18px;
+				}
+			}
+
+			p {
+				font-size: 18px;
+				color: $color5;
 			}
 		}
 
@@ -553,6 +1930,9 @@ header {
 				margin: 0;
 				margin-bottom: 30px;
 				color: $color2;
+				@include respond-to("small-lg1") {
+					font-size: 22px;
+				}
 			}
 
 			ul {
@@ -562,13 +1942,11 @@ header {
 				li {
 					padding-bottom: 15px;
 					.manu-img {
-						// height: 100px;
-						// width: 75px;
-						// background-color: $color2;
 						vertical-align: middle;
 						display: inline-block;
 						color: $color2;
 					    font-size: 70px;
+					    line-height: 1;
 					}
 					p {
 						display: inline-block;
@@ -579,6 +1957,14 @@ header {
 						b {
 							color: $color1;
 						}
+
+						@include respond-to("small-lg1") {
+							font-size: 16px;
+						}
+
+						@include respond-to("xs-sm") {
+							font-size: 14px;
+						}
 					}
 
 					&:last-child {
@@ -586,10 +1972,163 @@ header {
 					}
 				}
 			}
+
+			.bo-results {
+				ul {
+					li {
+						.res-wrap {
+							-ms-flex: 0 0 70%;
+							flex: 0 0 70%;
+							max-width: 70%;
+							padding: 0 10px;
+							h3 {
+								text-align: left;
+								font-size: 24px;
+								margin-bottom: 0;
+								font-family: $font3;
+								font-weight: bold;
+								font-style: italic;
+								@include respond-to("xs-sm") {
+									font-size: 18px;
+								}
+
+							}
+
+							p {
+								display: block;
+								font-size: 18px;
+								padding: 0;
+								margin-bottom: 0;
+								@include respond-to("xs-sm") {
+									font-size: 16px;
+								}
+
+							}
+
+							a {
+								font-size: 18px;
+								color: $color2;
+								text-decoration: none;
+								@include respond-to("xs-sm") {
+									font-size: 16px;
+								}
+							}
+
+							@include respond-to("xs-sm") {
+								-ms-flex: 0 0 100%;
+								flex: 0 0 100%;
+								max-width: 100%;
+							}
+						}
+
+						.res-btn {
+							-ms-flex: 0 0 30%;
+							flex: 0 0 30%;
+							max-width: 30%;
+							padding: 0 10px;
+							.lmore-wrap{
+								text-align: center;
+								display: block;
+								width: 100%;
+								margin-top: 10px;
+								margin-bottom: 10px;
+								a {
+									font-size: 14px;
+									padding: 10px 10px;
+								}
+
+								&.alt-btn {
+									background-color: $color5;
+									a {
+										color: $color2;
+									}
+
+									&:after {
+										background-color: $color5;
+										border: solid 1px $color2;
+									}
+
+									@include respond-to("xs-sm") {
+										margin-right: 10px;
+									}
+								}
+
+								@include respond-to("xs-sm") {
+									width: auto;
+									display: inline-block;
+								}
+							}
+
+							@include respond-to("xs-sm") {
+								-ms-flex: 0 0 100%;
+								flex: 0 0 100%;
+								max-width: 100%;
+							}
+						}
+					}
+				}
+			}
 		}		
 
 		&:last-child {
 			margin-bottom: 0;
+		}
+
+		@include respond-to("xxs") {
+			margin-bottom: 15px;
+		}
+	}
+
+	.manBox {
+		@include respond-to("xs") {
+			margin-bottom: 30px;
+		}
+
+		@include respond-to("xxs") {
+			margin-bottom: 15px;
+		}
+	}
+
+	.cont-btns-wrap {
+		.cont-btns {
+			margin-bottom: 20px;
+		}
+		.lmore-wrap {
+			max-width: 140px;
+			width: 100%;
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			&.alt-btn-2 {
+				background-color: $color2;
+				a {
+					color: $color5;
+				}
+
+				&:after {
+					background-color: $color2;
+				}
+
+				&:hover {
+					&:after {
+						border-bottom: solid 1px $color5;
+						border-right: solid 1px $color5;
+					}
+				}
+			}
+
+			&.alt-btn {
+				background-color: $color5;
+				a {
+					color: $color2;
+				}
+
+				&:after {
+					background-color: $color5;
+					border: solid 1px $color2;
+				}
+			}
 		}
 	}
 }
@@ -599,6 +2138,7 @@ header {
 		label {
 			display: block;
 			font-size: 12px;
+			color: $color2;
 			.red {
 				color: red;
 			}
@@ -612,6 +2152,8 @@ header {
 		}
 
 		input {
+			outline: none;
+			border: $color2 1px solid;
 			width: 100%;
 			&[type="submit"] {
 				width: auto;
@@ -624,31 +2166,51 @@ header {
 		margin: 0 20px;
 		font-weight: 700;
 		color: $color5;
+		border-radius: 0;
+		@include respond-to("xs-sm") {
+			font-size: 14px;
+			padding: 7.5px 12.5px;
+		}
 	}
 
 	.tab-content {
 		p {
 			font-size: 18px;
 			color: $color2;
+			@include respond-to("xs-sm") {
+				font-size: 14px;
+			}
 		}
 
 		.warning {
 			color: red;
 			display: block;
 			padding-bottom: 20px;
+			@include respond-to("xs-sm") {
+				font-size: 14px;
+				padding-bottom: 10px;
+			}
 		}
 
 		.caution {
 			color: $color2;
 			display: block;
 			padding-bottom: 20px;
+			@include respond-to("xs-sm") {
+				font-size: 14px;
+				padding-bottom: 10px;
+			}
 		}
 
 		.fake-img {
-			width: 400px;
+			width: 100%;
+			max-width: 400px;
 			height: 400px;
 			background-color: $color4;
 			margin: 0 auto;
+			@include respond-to("xs-sm") {
+				height: 300px;
+			}
 		}
 	}
 }
@@ -656,7 +2218,7 @@ header {
 .poli {
 	.poli-box {
 		height: 300px;
-		background-color: $color4;
+		background-color: $color2;
 		transition: 300ms all ease;
 		margin-bottom: 30px;
 		.poli-cont {
@@ -664,16 +2226,23 @@ header {
 			h2 {
 				font-size: 24px;
 				font-weight: 700;
-				color: $color2;
+				color: $color5;
 				transition: 300ms all ease;
 				margin-bottom: 0;
+				text-transform: uppercase;
+				@include respond-to("xs-sm") {
+					font-size: 16px;
+				}
 			}
 
 			p {
 				font-size: 18px;
-				color: $color2;
+				color: $color5;
 				transition: 300ms all ease;
 				margin-bottom: 0;
+				@include respond-to("xs-sm") {
+					font-size: 14px;
+				}
 			}
 		}
 
@@ -686,6 +2255,14 @@ header {
 				}
 			}
 		}
+
+		@include respond-to("xs-sm1") {
+			height: 250px;
+		}
+
+		@include respond-to("xxs2") {
+			height: 200px;
+		}
 	}
 }
 
@@ -695,11 +2272,28 @@ header {
 		margin-bottom: 50px;
 	}
 
+	#filterBox {
+		select {
+			@include respond-to("xs") {
+				width: 100%;
+				margin-bottom: 10px;
+			}
+		}
+	}
+
+
 	select {
 		height: 48px;
 		display: inline-block;
 		vertical-align: middle;
 		margin-right: 20px;
+		border-color: $color2;
+		color: $color2;
+		@include respond-to("xs-sm") {
+			height: 29px;
+			margin-right: 10px;
+			font-size: 14px;
+		}
 	}
 
 	input {
@@ -711,10 +2305,26 @@ header {
 		}
 	}
 
+	.lmore-wrap {
+		vertical-align: middle;
+	}
+
+	.def-btn-alt {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
 	h2 {
 		font-size: 36px;
 		font-weight: 700;
 		color: $color1;
+		font-family: $font3;
+		font-weight: bold;
+		font-style: italic;
+		text-transform: uppercase;
+		@include respond-to("xxs1") {
+			font-size: 30px;
+		}
 	}
 
 	.sele-box {
@@ -726,12 +2336,30 @@ header {
 		.sele-img {
 			height: 350px;
 			background-color: $color4;
+			@include respond-to("xs-sm") {
+				height: 260px;
+			}
+
+			@include respond-to("xs") {
+				height: 200px;
+			}
 		}
 
 		h3 {
 			font-size: 24px;
 			font-weight: 700;
+			font-family: $font3;
+			font-weight: bold;
+			font-style: italic;
 			color: $color2;
+			text-transform: uppercase;
+			span {
+				color: $color3;
+			}
+
+			@include respond-to("xs-sm") {
+				font-size: 18px;
+			}
 		}
 
 		p {
@@ -740,6 +2368,10 @@ header {
 			margin-bottom: 10px;
 			&:last-child {
 				margin: 0;
+			}
+
+			@include respond-to("xs-sm") {
+				font-size: 14px;
 			}
 		}
 
@@ -751,27 +2383,65 @@ header {
 		&:last-child {
 			margin-bottom: 0;
 		}
+
+		@include respond-to("xs") {
+			padding: 25px;
+		}
+
+		@include respond-to("xxs1") {
+			padding: 15px;
+		}
+
+		@include respond-to("xxs") {
+			padding: 15px;
+		}
 	}
 
 	.comp-tbl {
 		h4 {
-			font-size: 24px;
+			font-size: 30px;
 			font-weight: 700;
-			color: $color2;
+			font-family: $font3;
+			font-weight: bold;
+			font-style: italic;
+			color: $color1;
+			text-transform: uppercase;
+			span {
+				color: $color3;
+			}
+
+			@include respond-to("small-lg1") {
+				font-size: 24px;
+			}
 		}
 
 		.magic-box {
+			padding-right: 15px;
 			.fake-img {
 				height: 175px;
 				background-color: $color4;
 				margin-bottom: 10px;
+				@include respond-to("xxs1") {
+					height: 150px;
+				}
 			}
+
 			&.v2 {
 				h4 {
 					font-size: 18px;
 					text-transform: uppercase;
 					color: $color2;
 				}
+			}
+
+			&.comp-mag {
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+
+			@include respond-to("xs") {
+				padding-left: 10px;
+				padding-right: 10px;
 			}
 		}
 
@@ -784,14 +2454,70 @@ header {
 			.attr-val {
 				font-size: 18px;
 				color: $color2;
-				text-transform: uppercase;
-				padding: 10px 10px 10px 0;
+				padding: 10px 10px 10px 10px;
+				&:nth-child(even) {
+				    position: relative;
+				    overflow: hidden;
+				    &:before {
+					    background-color: #7c878e30;
+					    right: 0;
+					    top: 0;
+					    position: absolute;
+					    height: 100%;
+					    width: 100%;
+					    content: '';
+				    }
+				}
+
+				@include respond-to("small-lg1") {
+					font-size: 16px;
+				}
+
+				@include respond-to("xs-sm") {
+					font-size: 14px;
+				}
+			}
+
+			&.comp-head {
+				.attr-val {
+					font-size: 18px;
+					color: $color2;
+					&:nth-child(even) {
+					    position: relative;
+					    overflow: hidden;
+					    &:before {
+							background-color: #7c878e30;
+							right: -20px;
+							top: 0;
+							position: absolute;
+							height: 100%;
+							width: 100%;
+							transform: skew(-20deg, 0deg);
+							content: "";
+					    }
+					}
+
+					> b {
+						margin-left: 30px;
+					}
+
+					@include respond-to("small-lg1") {
+						font-size: 16px;
+					}
+
+					@include respond-to("xs-sm") {
+						font-size: 14px;
+					}
+				}
 			}
 		}
 
 		.owl-carousel {
 			.owl-nav {
 				text-align: right;
+				@include respond-to("xs") {
+					text-align: center;
+				}
 			}
 			.owl-prev,
 			.owl-next {
@@ -810,12 +2536,181 @@ header {
 					span {
 					}
 				}
+
+				@include respond-to("xs") {
+				    font-size: 14px;
+				}
+			}
+
+			.owl-item {
+				.attr-box {
+					.attr-val {
+						padding-right: 30px;
+						@include respond-to("xxs1") {
+							padding-right: 10px;
+						}
+					}
+				}
+			}
+		}
+
+		.lastActiveItem {
+			.attr-box {
+				.attr-val {
+					font-size: 18px;
+					color: $color2;
+					padding-right: 30px;
+					&:nth-child(even) {
+					    position: relative;
+					    overflow: hidden;
+					    &:before {
+							background-color: #7c878e30;
+							left: -20px;
+							top: 0;
+							position: absolute;
+							height: 100%;
+							width: 100%;
+							transform: skew(-20deg, 0deg);
+							content: "";
+					    }
+					}
+
+					> b {
+						margin-left: 30px;
+					}
+
+					@include respond-to("small-lg1") {
+						font-size: 16px;
+					}
+
+					@include respond-to("xs-sm") {
+						font-size: 14px;
+					}
+				}
+			}
+		}
+
+		.firstActiveItem {
+			.attr-box {
+				.attr-val {
+					@include respond-to("xs-sm") {
+						font-size: 18px;
+						color: $color2;
+						padding-right: 30px;
+						transition: 300ms all ease;
+					}
+
+			    	@include respond-to("xxs1") {
+			    		padding-right: 10px;
+			    	}
+
+					&:nth-child(even) {
+						@include respond-to("xs-sm") {
+						    position: relative;
+						    overflow: hidden;
+						}
+					    &:before {
+					    	@include respond-to("xs-sm") {
+								background-color: #7c878e30;
+								left: -20px;
+								top: 0;
+								position: absolute;
+								height: 100%;
+								width: 100%;
+								transform: skew(-20deg, 0deg);
+								content: "";
+								transition: 300ms all ease;
+					    	}
+
+					    	@include respond-to("xxs1") {
+					    		left: 0;
+					    		transform: none;
+					    	}
+					    }
+					}
+
+					> b {
+						margin-left: 30px;
+					}
+
+					@include respond-to("small-lg1") {
+						font-size: 16px;
+					}
+
+					@include respond-to("xs-sm") {
+						font-size: 14px;
+					}
+				}
+			}
+		}
+
+		.btn-xl {
+			@include respond-to("small-lg1") {
+			    padding: 10px 15px;
+			    font-size: 16px;
+			}
+
+			@include respond-to("xs-sm") {
+			    padding: 7.5px 12.5px;
+			    font-size: 14px;
+			}
+		}
+
+		.leftbox {
+			.attr-box {
+				.attr-val {
+					@include respond-to("xs") {
+						padding-left: 30px;
+						position: relative;
+					}
+
+					@include respond-to("xxs1") {
+						padding-left: 10px;
+					}
+
+
+					&:nth-child(even) {
+						&:before {
+							@include respond-to("xs") {
+								background-color: #7c878e30;
+								right: -20px;
+								top: 0;
+								position: absolute;
+								height: 100%;
+								width: 100%;
+								transform: skew(-20deg, 0deg);
+								content: "";
+							}
+
+							@include respond-to("xxs1") {
+								right: 0;
+								transform: none;
+							}
+						}
+					}
+				}
 			}
 		}
 	}
 }
 
 .prod-info {
+	&.prod {
+		.offset-1 {
+			@include respond-to("small-lg1") {
+				margin-left: 0;
+			}
+		}
+
+		.col-5 {
+			@include respond-to("small-lg1") {
+				-ms-flex: 0 0 50%;
+				flex: 0 0 50%;
+				max-width: 50%;
+			}
+		}
+	}
+
 	.thumb-nav {
 		width: 100px;
 		.fake-img {
@@ -826,21 +2721,92 @@ header {
 			&:last-child {
 				margin-bottom: 0;
 			}
+			@include respond-to("xs-sm") {
+			    height: 75px;
+			}
+
+			@include respond-to("xs") {
+				width: 75px;
+				margin-left: 5px;
+				margin-right: 5px;
+			}
+
+			&:first-child {
+				@include respond-to("xs") {
+					margin-left: 0;
+				}
+			}
+
+			&:last-child {
+				@include respond-to("xs") {
+					margin-right: 0;
+				}
+			}
+		}
+		@include respond-to("xs-sm") {
+		    width: 75px;
 		}
 
+		@include respond-to("xs") {
+			width: 100%;
+			height: 75px;
+			display: flex;
+			flex-wrap: wrap;
+			order: 2;
+			margin-top: 10px;
+			flex-direction: row;
+		}
 	}
 
 	.big-fake {
 		width: calc(100% - 110px);
 		background-color: $color4;
 		height: 450px;
+		@include respond-to("xs-sm") {
+			width: calc(100% - 85px);
+			height: 320px;
+		}
+
+		@include respond-to("xs") {
+			width: 100%;
+		}
+	}
+
+	&.v2 {
+		h1 {
+			color: $color1;
+		}
+
+		p {
+			@include respond-to("xs-sm") {
+				font-size: 14px;
+			}
+		}
 	}
 
 	h1 {
 		font-weight: 700;
-		font-family: $font2;
-		color: $color1;
+		font-family: $font3;
+		font-weight: bold;
+		font-style: italic;
+		color: $color2;
 		font-size: 48px;
+		text-transform: uppercase;
+		span {
+			color: $color3;
+		}
+
+		@include respond-to("small-lg1") {
+			font-size: 42px;
+		}
+
+		@include respond-to("xs-sm") {
+			font-size: 36px;
+		}
+
+		@include respond-to("xxs1") {
+			font-size: 30px;
+		}
 	}
 
 	p {
@@ -851,12 +2817,25 @@ header {
 		&:last-child {
 			margin-bottom: 0;
 		}
+		@include respond-to("small-lg1") {
+			font-size: 16px;
+		}
+		@include respond-to("xs-sm") {
+			font-size: 14px;
+		}
 	}
 
 	&.v2 {
 		h1 {
 			font-weight: 700;
 			font-size: 36px;
+			@include respond-to("xxs1") {
+				font-size: 30px;
+			}
+		}
+
+		.big-fake {
+			width: calc(100% );
 		}
 	}
 }
@@ -872,6 +2851,7 @@ header {
 			color: #003c71;
 			font-size: 70px;
 		}
+
 		li {
 			p {
 				display: inline-block;
@@ -882,6 +2862,11 @@ header {
 				b {
 				    color: #ff671f;
 				}
+
+				@include respond-to("small-lg1") {
+					font-size: 16px;
+				}
+
 			}
 		}
 	}
@@ -889,7 +2874,32 @@ header {
 	h2 {
 		font-size: 36px;
 		color: $color1;
-		font-weight: 700;
+		font-family: $font3;
+		font-weight: bold;
+		font-style: italic;
+		text-transform: uppercase;
+		&.ws {
+			position: relative;
+			display: inline-block;
+			padding-bottom: 20px;
+			&:before {
+			content: "";
+			width: 100%;
+			height: 15px;
+			background-color: #003c71;
+			position: absolute;
+			bottom: 0;
+			left: -5px;
+			right: 0;
+			transform: skewX(-15deg);
+			-webkit-clip-path: polygon(0px 0, 0 15px, 100% 0);
+			clip-path: polygon(0px 0, 0 15px, 100% 0);
+			}
+		}
+
+		@include respond-to("small-lg1") {
+			font-size: 30px;
+		}
 	}
 
 	.rp {
@@ -898,12 +2908,30 @@ header {
 			background-color: $color4;
 			width: 100%;
 			margin-bottom: 10px;
+			@include respond-to("xs-sm") {
+				height: 225px;
+			}
+
+			@include respond-to("xxs1") {
+				height: 200px;
+			}
 		}
 
 		h3 {
 			font-size: 24px;
 			color: $color2;
 			font-weight: 700;
+			font-family: $font3;
+			font-weight: bold;
+			font-style: italic;
+			text-transform: uppercase;
+			@include respond-to("small-lg1") {
+				font-size: 20px;
+			}
+
+			@include respond-to("xs-sm") {
+				font-size: 16px;
+			}
 		}
 	}
 
@@ -914,7 +2942,41 @@ header {
 			tr {
 				td {
 					font-size: 24px;
+					padding: .5rem .625rem .625rem;
 					color: $color2;
+					&:first-child {
+					    padding-left: 2.5rem;
+					    @include respond-to("xs") {
+					    	padding: 10px;
+					    }
+					}
+
+					&:last-child {
+					    padding-right: 2.5rem;
+					    @include respond-to("xs") {
+					    	padding: 10px;
+					    }
+					}
+
+					@include respond-to("small-lg1") {
+						font-size: 20px;
+					}
+
+					@include respond-to("xs-md") {
+						font-size: 16px;
+					}
+
+					@include respond-to("xs") {
+						font-size: 14px;
+					}
+				}
+
+				&:nth-child(even) {
+					background-color: #7c878e30;
+				    transform: skewX(-20deg);
+				    td {
+				    	transform: skewX(20deg);
+				    }
 				}
 			}
 		}
@@ -922,12 +2984,15 @@ header {
 }
 
 .topics {
-
 	h2 {
 		font-size: 42px;
-		color: $color2;
-		font-family: $font1;
+		color: $color1;
+		font-family: $font3;
+		font-weight: bold;
+		font-style: italic;
 		margin-bottom: 20px;
+		text-transform: uppercase;
+		margin-bottom: 0;
 	}
 
 	.nav-tabs {
@@ -942,6 +3007,11 @@ header {
 				&.active {
 					color: $color1;
 				}
+
+				@include respond-to("xs-sm") {
+					font-size: 16px;
+					padding: 5px;
+				}
 			}
 		}
 	}
@@ -955,6 +3025,9 @@ header {
 		font-size: 18px;
 		font-weight: 700;
 		color: $color2;
+		@include respond-to("xs-sm") {
+			font-size: 16px;
+		}
 	}
 }
 
@@ -962,9 +3035,18 @@ header {
 	background-color: $color4;
 	h2 {
 		font-size: 42px;
-		color: $color2;
-		font-family: $font1;
+		color: $color1;
+		font-family: $font3;
+		font-weight: bold;
+		font-style: italic;
 		margin-bottom: 20px;
+		text-transform: uppercase;
+		@include respond-to("small-lg1") {
+			font-size: 36px;
+		}
+		@include respond-to("xxs1") {
+			font-size: 30px;
+		}
 	}
 
 	p {
@@ -973,12 +3055,46 @@ header {
 		padding-left: 30px;
 		font-size: 24px;
 		color: #003c71;
+		@include respond-to("small-lg1") {
+			font-size: 20px;
+		}
+
+		@include respond-to("xs-sm") {
+			font-size: 14px;
+		}
+	}
+
+	&.v2 {
+		p {
+			padding: 0;
+		}
 	}
 }
 
 footer {
 	* {
 		color: $color2;
+	}
+
+	.cust-col {
+		@include respond-to("xs-sm1") {
+			-ms-flex: 0 0 50%;
+			flex: 0 0 50%;
+			max-width: 50%;
+		}
+
+		@include respond-to("xxs1") {
+			-ms-flex: 0 0 100%;
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+	}
+
+	.inp-btn {
+	    width: calc(100% - 96px);
+	    input {
+	    	width: 100%;
+	    }
 	}
 
 	.widget {
@@ -989,6 +3105,13 @@ footer {
 			margin-bottom: 20px;
 			font-family: $font2;
 			color: $color1;
+			@include respond-to("small-lg1") {
+				font-size: 16px;
+			}
+
+			@include respond-to("xs-sm") {
+				margin-bottom: 10px;
+			}
 		}
 
 		ul {
@@ -999,8 +3122,20 @@ footer {
 				a {
 					font-size: 18px;
 					text-decoration: none;
-					// text-transform: uppercase;
 					font-family: $font2;
+					color: $color2;
+					transition: 300ms all;
+					&:hover {
+						color: $color1;
+					}
+
+					@include respond-to("small-lg1") {
+						font-size: 16px;
+					}
+
+					@include respond-to("xs-sm") {
+						font-size: 14px;
+					}
 				}
 			}
 		}
@@ -1009,12 +3144,25 @@ footer {
 	.foot-text {
 		padding-top: 40px;
 		p {
-			font-size: 18px;
+			font-size: 12px;
 			text-decoration: none;
 			// text-transform: uppercase;
 			a {
 				text-decoration: none;
+				color: $color2;
+				transition: 300ms all;
+				&:hover {
+					color: $color1;
+				}
 			}
+
+			@include respond-to("xs-sm") {
+				font-size: 11px;
+			}
+		}
+
+		@include respond-to("xs-sm") {
+			padding-top: 10px;
 		}
 	}
 }
@@ -1074,6 +3222,7 @@ footer {
 
 	.navdropbox {
 		left: 0;
+	    box-shadow: #fff 0px 2px 0px;
 		background-color: #003c71;
 		width: 100%;
 		position: fixed;
@@ -1104,6 +3253,8 @@ footer {
 				text-decoration: none;
 				color: $color1;
 			}
+
+
 		}
 
 		ul {

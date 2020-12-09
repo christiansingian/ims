@@ -1,13 +1,4 @@
 @font-face {
-    font-family: 'Aachen';
-    src: url('AachenBoldPlain.woff2') format('woff2'),
-        url('AachenBoldPlain.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
     font-family: 'Neue Aachen Pro';
     src: url('NeueAachenPro-BoldItalic.woff2') format('woff2'),
         url('NeueAachenPro-BoldItalic.woff') format('woff');

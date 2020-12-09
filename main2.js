@@ -1,53 +1,4 @@
 jQuery(document).ready(function($) {
-	$('.featMh').matchHeight();
-	carousel = $(".owl-carousel");
-	carousel.owlCarousel({
-	    loop:true,
-	    margin:10,
-	    nav:true,
-	    dots: false,
-	    items: 2,
-	    margin: 0,
-	    autoplay:false,
-        navText : ['<i class="fa fa-chevron-left" aria-hidden="true"></i>','<i class="fa fa-chevron-right" aria-hidden="true"></i>'],
-        responsive : {
-            // breakpoint from 0 up
-            0 : {
-                items: 1,
-            },
-            // breakpoint from 480 up
-            768 : {
-                items: 1,
-                
-            },
-            // breakpoint from 768 up
-            992 : {
-                items: 2,
-            }
-        }
-
-	});
-    checkClasses();
-    carousel.on('translated.owl.carousel', function(event) {
-        checkClasses();
-    });
-
-    function checkClasses(){
-        var total = $('.owl-carousel .owl-stage .owl-item.active').length;
-
-        $('.owl-carousel .owl-stage .owl-item').removeClass('firstActiveItem lastActiveItem');
-
-        $('.owl-carousel .owl-stage .owl-item.active').each(function(index){
-            if (index === 0) {
-                // this is the first one
-                $(this).addClass('firstActiveItem');
-            }
-            if (index === total - 1 && total>1) {
-                // this is the last one
-                $(this).addClass('lastActiveItem');
-            }
-        });
-    }
     sep();
     gg();
 });
@@ -91,8 +42,6 @@ function sep() {
         all: false, // add links to parents
         allTitle: 'All' // parents links text
      });
-    $('.btmA').matchHeight();
-	$('#mainHeader').scrollToFixed();
 	$('.magic-box').matchHeight();
 	$('.attr-1').matchHeight();
 	$('.attr-2').matchHeight();
